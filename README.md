@@ -14,9 +14,7 @@
 
 ### Origen Académico
 
-El proyecto fue desarrollado de forma colaborativa por un equipo de 5 integrantes como trabajo práctico grupal de la materia **Ingeniería de Software** en la **Universidad de Buenos Aires (FIUBA)**. El ciclo de vida incluyó relevamiento de requerimientos, modelado de dominio, definición de historias de usuario con Gherkin, implementación iterativa y pruebas de integración.
-
-El repositorio registra **221 commits** de 5 colaboradores a través de 10 ramas de feature.
+El proyecto fue desarrollado de forma colaborativa por un equipo de 5 integrantes como él trabajo práctico de la materia **Ingeniería de Software** de la **Universidad de Buenos Aires (FIUBA)**. El ciclo de vida incluyó relevamiento de requerimientos, modelado de dominio, definición de historias de usuario con Gherkin, implementación iterativa y pruebas de integración. Todo fue supervisado por el equipo de profesores de forma semanal mediante reuniones de obtencion de requisitos. Ellos tomaron el rol de: Tomás Bruneleschi (PO) y Leonardo Felici (PM)
 
 ### Alcance de la Implementación
 
@@ -37,7 +35,7 @@ Para la documentación de endpoints disponibles, ver el [Swagger UI en producci�
 El módulo gestiona dos entidades principales:
 
 - **Project:** representa un proyecto con nombre, estado (`PENDIENTE`, `ACTIVO`, `PAUSADO`, `CANCELADO`, `TERMINADO`), fechas planificadas, cliente y etiquetas.
-- **Task:** representa una tarea dentro de un proyecto con asignado, horas estimadas, estado (`TODO`, `IN_PROGRESS`, `DONE`), ticket asociado y etiquetas.
+- **Task:** representa una tarea dentro de un proyecto con asignado posible de horas estimadas, estado (`TODO`, `IN_PROGRESS`, `DONE`), ticket asociado y etiquetas.
 
 La API también consume servicios externos a través de `ExternalApiController` para integrar datos de recursos del sistema PSA.
 
@@ -205,7 +203,7 @@ La API quedará disponible en `http://localhost:8080`.
 
 ## Autores
 
-Desarrollado colaborativamente por el equipo del Squad 07 — Ingeniería de Software, FIUBA (2025, 1C):
+Desarrollado colaborativamente por el equipo del Squad 07 — Ingeniería de Software, FIUBA (2025):
 
 - **Valentino Carmona** — [github.com/Valentino-Carmona](https://github.com/Valentino-Carmona)
 - Bruno Contreras
