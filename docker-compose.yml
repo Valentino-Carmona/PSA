@@ -42,6 +42,24 @@ services:
     env_file:
       - .env
     
+    # Configuración de Healthcheck adicional al Dockerfile
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:$${PORT:-8080}/swagger-ui/index.html || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      
+    # Límites de recursos (Hardening)
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 512M
+          
     # Reinicia automáticamente el contenedor si falla
     restart: unless-stopped
     
