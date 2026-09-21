@@ -1,7 +1,7 @@
 # Makefile para el proyecto PSA API
 
-include .env
-export $(shell sed 's/=.*//' .env)
+-include .env
+export $(shell [ -f .env ] && sed 's/=.*//' .env)
 
 # Variables
 PROJECT_NAME := proyecto-api
@@ -27,7 +27,7 @@ install:  ## Instala dependencias y compila
 
 test:  ## Ejecuta los tests
 	@echo "Ejecutando tests..."
-	@$(MAVEN) test
+	@$(MAVEN) test -Dspring.flyway.enabled=false
 
 check-env:  ## Verifica que el archivo .env exista
 	@if [ ! -f $(DOTENV) ]; then \
@@ -90,9 +90,3 @@ rebuild:
 	docker-compose down
 	docker-compose build --no-cache
 	docker-compose up -d
-
-format:  ## Formatea el código con Spotless (si lo configuras)
-	@echo "Pendiente de implementación..."
-
-check-format:  ## Verifica formato del código
-	@echo "Pendiente de implementación..."
