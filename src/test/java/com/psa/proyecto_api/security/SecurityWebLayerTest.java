@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest({ProjectController.class, AuthController.class})
-@Import({SecurityConfig.class, JwtAuthenticationFilter.class, JwtUtil.class})
+@Import({SecurityConfig.class, JwtAuthenticationFilter.class, JwtUtil.class, JwtAuthenticationEntryPoint.class, RateLimitingFilter.class})
 public class SecurityWebLayerTest {
 
     @Autowired
@@ -30,9 +30,9 @@ public class SecurityWebLayerTest {
     private ExternalApiService externalApiService;
 
     @Test
-    void whenAccessProtectedEndpointWithoutToken_thenReturns403() throws Exception {
+    void whenAccessProtectedEndpointWithoutToken_thenReturns401() throws Exception {
         mockMvc.perform(get("/api/v1/proyectos"))
-               .andExpect(status().isForbidden());
+               .andExpect(status().isUnauthorized());
     }
 
     @Test

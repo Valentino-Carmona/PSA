@@ -30,17 +30,7 @@ public abstract class BaseIntegrationTest {
     @Autowired
     protected DataSource dataSource;
 
-    @Autowired
-    protected com.psa.proyecto_api.security.JwtUtil jwtUtil;
 
-    @jakarta.annotation.PostConstruct
-    public void configureSecurityHeaders() {
-        String token = jwtUtil.generateToken("test-user");
-        restTemplate.getRestTemplate().getInterceptors().add((request, body, execution) -> {
-            request.getHeaders().add("Authorization", "Bearer " + token);
-            return execution.execute(request, body);
-        });
-    }
 
     public void setUp() {
         

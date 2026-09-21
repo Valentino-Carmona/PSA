@@ -13,7 +13,7 @@ import com.psa.proyecto_api.steps.BaseCucumber;
 public class AsignarRecursoTareaSteps extends BaseCucumber {
     
     Long taskId;
-    String previousResourceId = "stringstringstringstringstringstring";
+    String previousResourceId = "11111111-1111-1111-1111-111111111111";
     String assignedResourceId;
 
     @Before

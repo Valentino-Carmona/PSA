@@ -1,4 +1,4 @@
-﻿# PSA — Módulo de Gestión de Proyectos
+# PSA — Módulo de Gestión de Proyectos
 
 ![Java 17](https://img.shields.io/badge/Java-17-ED8B00?style=flat&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5.0-6DB33F?style=flat&logo=springboot&logoColor=white)
@@ -198,6 +198,17 @@ La API quedará disponible en `http://localhost:8080`.
 
 > [!IMPORTANT]
 > El servicio corre en el tier gratuito de Render. La primera petición tras inactividad puede demorar varios segundos mientras el servidor se reinicia.
+
+---
+
+## 07. Seguridad y Resiliencia
+
+El backend cuenta con capas de seguridad implementadas defensivamente frente a vulnerabilidades y ataques comunes:
+
+- **Prevención de Inyecciones (XSS, SQLi):** Validación estricta mediante expresiones regulares (`@Pattern`) en DTOs. Se rechazan inputs con caracteres nocivos o UUIDs malformados, neutralizando posibles inyecciones.
+- **Rate Limiting (Mitigación DoS):** Implementación de `Bucket4j` a través de un `RateLimitingFilter` de red, limitando peticiones a **200 req/min por IP** y retornando `429 Too Many Requests` ante bloqueos.
+- **Manejo Correcto de JWT:** Se configuró un `JwtAuthenticationEntryPoint` personalizado que maneja fallos de autenticación (firmas adulteradas o expiradas) devolviendo estructuradamente `401 Unauthorized` sin filtrar trazas internas del framework.
+- **Suite Defensiva (TDD):** Un conjunto de tests integrales (`SecurityEdgeCaseIntegrationTest`) que auditan la seguridad bombardeando de peticiones la API y enviando payloads maliciosos para comprobar las defensas matemáticamente en CI/CD.
 
 ---
 

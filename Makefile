@@ -74,6 +74,7 @@ up: check-env
 
 # Ejecutar tests en Docker
 docker-test: check-env
+	$(DOCKER_COMPOSE) -f docker-compose.test.yml rm -fsv
 	$(DOCKER_COMPOSE) -f docker-compose.test.yml up --build --abort-on-container-exit
 
 # Detener los servicios
