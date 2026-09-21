@@ -5,6 +5,8 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![BDD Cucumber](https://img.shields.io/badge/BDD-Cucumber-23D96C?style=flat&logo=cucumber&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-3.x-C71A36?style=flat&logo=apachemaven&logoColor=white)
+![CI Status](https://github.com/Valentino-Carmona/PSA/actions/workflows/ci.yml/badge.svg)
+![Coverage](https://img.shields.io/badge/Coverage-Jacoco-brightgreen?logo=jacoco&logoColor=white)
 
 ---
 
@@ -203,12 +205,14 @@ La API quedará disponible en `http://localhost:8080`.
 
 ## 07. Seguridad y Resiliencia
 
-El backend cuenta con capas de seguridad implementadas defensivamente frente a vulnerabilidades y ataques comunes:
+El backend cuenta con capas de seguridad implementadas defensivamente frente a vulnerabilidades y ataques comunes, validadas empíricamente mediante pruebas de integración:
 
 - **Prevención de Inyecciones (XSS, SQLi):** Validación estricta mediante expresiones regulares (`@Pattern`) en DTOs. Se rechazan inputs con caracteres nocivos o UUIDs malformados, neutralizando posibles inyecciones.
-- **Rate Limiting (Mitigación DoS):** Implementación de `Bucket4j` a través de un `RateLimitingFilter` de red, limitando peticiones a **200 req/min por IP** y retornando `429 Too Many Requests` ante bloqueos.
-- **Manejo Correcto de JWT:** Se configuró un `JwtAuthenticationEntryPoint` personalizado que maneja fallos de autenticación (firmas adulteradas o expiradas) devolviendo estructuradamente `401 Unauthorized` sin filtrar trazas internas del framework.
-- **Suite Defensiva (TDD):** Un conjunto de tests integrales (`SecurityEdgeCaseIntegrationTest`) que auditan la seguridad bombardeando de peticiones la API y enviando payloads maliciosos para comprobar las defensas matemáticamente en CI/CD.
+  - *Evidencia:* Revisar [`CreateProjectRequest.java`](src/main/java/com/psa/proyecto_api/dto/request/CreateProjectRequest.java) y los tests que fuerzan fallos con caracteres inválidos.
+- **Rate Limiting (Mitigación DoS):** Implementación de `Bucket4j` a través de un [`RateLimitingFilter`](src/main/java/com/psa/proyecto_api/security/RateLimitingFilter.java) de red, limitando peticiones a **200 req/min por IP** y retornando `429 Too Many Requests` ante bloqueos.
+  - *Evidencia Empírica:* El test automatizado [`testRateLimitingBlocksExcessiveRequests`](src/test/java/com/psa/proyecto_api/security/SecurityEdgeCaseIntegrationTest.java) alcanza el límite de peticiones exitosas y verifica matemáticamente que la siguiente petición sea rechazada:
+- **Manejo Correcto de JWT:** Se configuró un [`JwtAuthenticationEntryPoint`](src/main/java/com/psa/proyecto_api/config/security/JwtAuthenticationEntryPoint.java) personalizado que maneja fallos de autenticación (firmas adulteradas o expiradas) devolviendo estructuradamente `401 Unauthorized` sin filtrar trazas internas del framework.
+- **Suite Defensiva (TDD):** Un conjunto de tests integrales ([`SecurityEdgeCaseIntegrationTest.java`](src/test/java/com/psa/proyecto_api/SecurityEdgeCaseIntegrationTest.java)) que auditan la seguridad bombardeando de peticiones la API y enviando payloads maliciosos para comprobar las defensas en cada build de CI/CD.
 
 ---
 
