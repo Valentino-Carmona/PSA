@@ -30,7 +30,7 @@ install:  ## Instala dependencias y compila
 
 test:  ## Ejecuta los tests
 	@echo "Ejecutando tests..."
-	@$(MAVEN) test -Dspring.flyway.enabled=false
+	@$(MAVEN) test
 
 check-env:  ## Verifica que el archivo .env exista
 	@if [ ! -f $(DOTENV) ]; then \
