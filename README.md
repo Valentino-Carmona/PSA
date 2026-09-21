@@ -1,95 +1,213 @@
-# API PSA - Modulo de Proyectos
+﻿# PSA — Módulo de Gestión de Proyectos
 
-## Tecnologías
-- Backend: Java 17, Spring Boot 3.5.0, Spring Data JPA, Spring Security, Flyway, PostgreSQL.
-- Documentación API: Springdoc OpenAPI (Swagger UI).
-- Gestión de Variables: dotenv-java para cargar configuraciones desde .env.
-- Testing: JUnit, Cucumber para pruebas de integración.
-- Gestión de Dependencias: Maven.
-- Arquitectura: Microservicios con API REST.
+![Java 17](https://img.shields.io/badge/Java-17-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5.0-6DB33F?style=flat&logo=springboot&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=flat&logo=postgresql&logoColor=white)
+![BDD Cucumber](https://img.shields.io/badge/BDD-Cucumber-23D96C?style=flat&logo=cucumber&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-3.x-C71A36?style=flat&logo=apachemaven&logoColor=white)
 
 ---
 
-## Requisitos para Ejecutar Localmente
+## 01. Overview
+
+**PSA es una API REST para la gestión de proyectos y tareas**, desarrollada como módulo de backend para el sistema PSA (Project & Squad Administration). Expone endpoints para crear, consultar, filtrar y administrar proyectos y sus tareas asociadas, con soporte para etiquetas, estados, asignación de recursos y cálculo de duración estimada.
+
+### Origen Académico
+
+El proyecto fue desarrollado de forma colaborativa por un equipo de 5 integrantes como trabajo práctico grupal de la materia **Ingeniería de Software** en la **Universidad de Buenos Aires (FIUBA)**. El ciclo de vida incluyó relevamiento de requerimientos, modelado de dominio, definición de historias de usuario con Gherkin, implementación iterativa y pruebas de integración.
+
+El repositorio registra **221 commits** de 5 colaboradores a través de 10 ramas de feature.
+
+### Alcance de la Implementación
+
+El sistema expone una **REST API documentada con Swagger UI** sobre un backend Spring Boot con persistencia en PostgreSQL (Neon). Implementa:
+
+- CRUD de proyectos y tareas con validación de datos de entrada.
+- Filtrado por nombre, estado, etiquetas y ticket asociado.
+- Integración con un cliente HTTP externo (PSA Client) para sincronizar recursos y datos de otros módulos.
+- Migraciones de base de datos gestionadas con Flyway (4 migraciones: esquema de proyectos, tareas, tags e índices).
+- Suite de pruebas de integración BDD con 16 archivos `.feature` en Cucumber.
+
+Para la documentación de endpoints disponibles, ver el [Swagger UI en producción](https://squad-07-2025-1c.onrender.com/swagger-ui/index.html).
+
+---
+
+## 02. Dominio
+
+El módulo gestiona dos entidades principales:
+
+- **Project:** representa un proyecto con nombre, estado (`PENDIENTE`, `ACTIVO`, `PAUSADO`, `CANCELADO`, `TERMINADO`), fechas planificadas, cliente y etiquetas.
+- **Task:** representa una tarea dentro de un proyecto con asignado, horas estimadas, estado (`TODO`, `IN_PROGRESS`, `DONE`), ticket asociado y etiquetas.
+
+La API también consume servicios externos a través de `ExternalApiController` para integrar datos de recursos del sistema PSA.
+
+---
+
+## 03. Arquitectura
+
+El proyecto sigue una **arquitectura en capas** organizada como microservicio REST.
+
+### 3.1. Stack Tecnológico
+
+| Capa | Tecnología |
+| :--- | :--- |
+| **Lenguaje** | Java 17 |
+| **Framework** | Spring Boot 3.5.0, Spring Data JPA, Spring Validation |
+| **Persistencia** | PostgreSQL (Neon), Flyway |
+| **Documentación API** | Springdoc OpenAPI / Swagger UI |
+| **Variables de entorno** | dotenv-java |
+| **Build** | Maven 3.x (wrapper `mvnw`) |
+| **Testing** | JUnit, Cucumber (BDD) |
+| **Reducción de boilerplate** | Lombok 1.18.34 |
+
+### 3.2. Estructura de Paquetes
+
+```text
+src/
+├── main/
+│   ├── java/com/psa/proyecto_api/
+│   │   ├── config/            # Configuración global (CORS, beans)
+│   │   ├── controller/        # Controladores REST
+│   │   │   ├── ProjectController.java
+│   │   │   ├── TaskController.java
+│   │   │   └── ExternalApiController.java
+│   │   ├── service/           # Lógica de negocio (interfaces + impl)
+│   │   │   ├── ProjectService.java
+│   │   │   ├── TaskService.java
+│   │   │   └── ExternalApiService.java
+│   │   ├── repository/        # Spring Data JPA
+│   │   ├── specification/     # Specs para filtrado dinámico
+│   │   ├── model/             # Entidades JPA (Project, Task, Tags, Enums)
+│   │   ├── dto/               # Request / Response DTOs
+│   │   ├── mapper/            # Conversión entidad ↔ DTO
+│   │   ├── exception/         # Manejo global de excepciones
+│   │   └── ProyectoApiApplication.java
+│   └── resources/
+│       ├── application.properties
+│       └── db/migration/      # Migraciones Flyway (V1–V4)
+└── test/
+    └── java/com/psa/proyecto_api/
+        └── features/          # Pasos Cucumber + archivos .feature
+```
+
+### 3.3. Migraciones de Base de Datos
+
+Las migraciones de Flyway construyen el esquema de forma incremental:
+
+| Versión | Descripción |
+| :--- | :--- |
+| `V1` | Esquema de proyectos |
+| `V2` | Esquema de tareas |
+| `V3` | Esquema de tags |
+| `V4` | Índices y triggers |
+
+---
+
+## 04. Testing
+
+El proyecto incluye **16 escenarios BDD** implementados con Cucumber que cubren las historias de usuario del módulo:
+
+| Historia de Usuario | Descripción |
+| :--- | :--- |
+| US-06 | Crear proyecto |
+| US-07 | Planificar fechas de proyecto |
+| US-08 | Etiquetar proyecto |
+| US-09 | Ver proyectos |
+| US-11 | Filtrar proyectos |
+| US-16 | Ver detalle de proyecto |
+| US-17 | Monitorear estado de proyecto |
+| US-18 | Eliminar proyecto |
+| US-19 | Crear tarea |
+| US-20 | Asignar recurso a tarea |
+| US-21 | Ver tareas |
+| US-22 | Filtrar tareas |
+| US-25 | Modificar horas estimadas |
+| US-26 | Cambiar estado de tarea |
+| US-27 | Ver detalle de tarea |
+| US-31 | Calcular duración estimada del proyecto |
+
+---
+
+## 05. Quick Start
+
 ### Prerrequisitos
-- Java 17 (JDK instalado y configurado).
-- Maven (puedes usar el wrapper ./mvnw incluido en el proyecto).
-- PostgreSQL (base de datos en la nube con Neon, configurada en .env).
-- Git (para clonar el repositorio).
-- Archivo .env con las variables de entorno necesarias (ver .env.example).
+
+- Java 17 (JDK instalado y configurado en `PATH`)
+- Maven (se puede usar el wrapper `./mvnw` incluido)
+- Archivo `.env` con las credenciales de la base de datos (ver `.env.example`)
 
 ### Configuración Inicial
-1. Clona el Repositorio:
+
 ```bash
-git clone https://github.com/ValentinoCarmonaS/squad_07_2025_1c.git
-cd proyecto-api
+# 1. Clonar el repositorio
+git clone https://github.com/Valentino-Carmona/PSA.git
+cd PSA
+
+# 2. Crear el archivo de entorno
+cp .env.example .env
+# Editá .env con tus credenciales de Neon (PostgreSQL)
 ```
 
-2. Configura el Archivo .env:
-- Copia `.env.example` a `.env`:
+Variables de entorno requeridas en `.env`:
+
 ```bash
-cp .env.example .env
-```
-- Edita `.env` con las credenciales de la base de datos Neon y otras configuraciones:
-```bash
-# Configuración de la base de datos Postgresql usando variables de entorno
+# Base de datos PostgreSQL (Neon)
 PGHOST=tu_host
 PGDATABASE=tu_db
 PGUSER=tu_usuario
 PGPASSWORD=tu_contraseña
 
-# Configuración de Hibernate/JPA
+# JPA / Flyway
 SPRING_JPA_HIBERNATE_DDL_AUTO=update
 SPRING_JPA_SHOW_SQL=true
-
-# Configuración de Flyway
 SPRING_FLYWAY_ENABLED=true
 
-# Configuración de servidor
+# Servidor
 PORT=8080
 ```
 
-3. Instala Dependencias:
-```bash
-make install
-```
+### Ejecución
 
-## Ejecución en Local
-1. Inicia la Aplicación en Modo Desarrollo:
 ```bash
+# Inicia la aplicación en modo desarrollo (limpia, instala y ejecuta)
 make dev
 ```
-Esto limpia el proyecto, instalara las dependencias y ejecuta `mvn spring-boot:run`. La aplicación estará disponible en http://localhost:8080 (o el puerto definido en `.env`).
 
-2. Accede a la Documentación de la API:
-> Abre este [link](https://squad-07-2025-1c.onrender.com/swagger-ui/index.html) para explorar los endpoints disponibles con Swagger UI.
-> 
-> Tambien todos los documentos finales del proyecto se encuentran en este [link](https://drive.google.com/file/d/1e22B1wmQyQSw3FzNEy5DdK-x8szU7Pth/view?usp=drive_link).
+La API quedará disponible en `http://localhost:8080`.
 
-## Estructura del Proyecto
-```bash
-proyecto-api/
-├──src/
-│  ├── main/c
-│  │   ├── java/com/psa/proyectos/
-│  │   │   ├── config/            # Configuraciones globales
-│  │   │   ├── controller/        # Controladores REST
-│  │   │   ├── service/           # Lógica de negocio (interfaces + impl)
-│  │   │   ├── repository/        # Spring Data JPA
-│  │   │   ├── model/             # Entidades JPA
-│  │   │   ├── dto/               # Objetos de Transferencia (Request/Response)
-│  │   │   ├── exception/         # Manejo de excepciones globales
-│  │   │   └── ProyectosApplication.java # Main class
-│  │   ├── resources/
-│  │   │   ├── application.properties    # Config principal
-│  │   │   └── db/                # Migraciones (Flyway)
-│  ├── test/
-│  │   ├── java/com/psa/proyectos/
-│  │   │   └── features/          # Pruebas Cucumber (.feature + Steps)
-│  │   └── resources/
-├── pom.xml
-├── Makefile
-├── README.md
-├── .env                        # Variables de entorno (NO committear)
-└── .env.example                # Variables de entorno de ejemplo (SI committear)
-```
+### Comandos Disponibles
+
+| Comando | Descripción |
+| :--- | :--- |
+| `make dev` | Limpia, instala dependencias e inicia la app |
+| `make install` | Instala dependencias y compila |
+| `make clean` | Limpia el proyecto |
+| `make test` | Ejecuta los tests |
+| `make setup` | Crea `.env` desde `.env.example` si no existe |
+| `make build` | Construye la imagen Docker |
+| `make up` | Levanta los servicios con Docker Compose |
+| `make down` | Detiene los servicios |
+| `make db-reset` | Resetea la base de datos (flyway clean + migrate) |
+| `make flyway-info` | Muestra el estado de las migraciones |
+
+---
+
+## 06. API & Documentación
+
+- **Swagger UI (producción):** [squad-07-2025-1c.onrender.com/swagger-ui/index.html](https://squad-07-2025-1c.onrender.com/swagger-ui/index.html)
+- **Swagger UI (local):** `http://localhost:8080/swagger-ui/index.html`
+- **Documentación final del proyecto:** [Google Drive](https://drive.google.com/file/d/1e22B1wmQyQSw3FzNEy5DdK-x8szU7Pth/view?usp=drive_link)
+
+> [!IMPORTANT]
+> El servicio corre en el tier gratuito de Render. La primera petición tras inactividad puede demorar varios segundos mientras el servidor se reinicia.
+
+---
+
+## Autores
+
+Desarrollado colaborativamente por el equipo del Squad 07 — Ingeniería de Software, FIUBA (2025, 1C):
+
+- **Valentino Carmona** — [github.com/Valentino-Carmona](https://github.com/Valentino-Carmona)
+- Bruno Contreras
+- Juan S. Burgos
+- muribe
