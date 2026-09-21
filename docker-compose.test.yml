@@ -1,0 +1,18 @@
+services:
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # Apuntamos a la etapa "builder" que tiene el JDK y Maven instalado
+      target: builder
+    container_name: proyecto-api-tests
+    # Sobrescribimos el comando para que, en vez de empaquetar, corra los tests
+    command: ["./mvnw", "test"]
+    env_file:
+      - .env
+    volumes:
+      # Cache local de dependencias Maven para acelerar ejecuciones sucesivas
+      - maven-test-cache:/root/.m2
+
+volumes:
+  maven-test-cache:
