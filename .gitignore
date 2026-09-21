@@ -37,3 +37,12 @@ build/
 
 ### Obsidian ###
 .obsidian/
+
+### Agent IA ###
+.agent/
+.agents/
+.claudecode/
+.gemini/
+.google/
+.vsc
+.vscode/
