@@ -23,12 +23,12 @@ services:
       - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
       
       # Configuración de Hibernate/JPA
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO:-update}
-      - SPRING_JPA_SHOW_SQL=${SPRING_JPA_SHOW_SQL:-true}
+      - PSA_JPA_HIBERNATE_DDL_AUTO=${PSA_JPA_HIBERNATE_DDL_AUTO:-update}
+      - PSA_JPA_SHOW_SQL=${PSA_JPA_SHOW_SQL:-true}
       - SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQLDialect
       
       # Configuración de Flyway
-      - SPRING_FLYWAY_ENABLED=${SPRING_FLYWAY_ENABLED:-true}
+      - PSA_FLYWAY_ENABLED=${PSA_FLYWAY_ENABLED:-true}
       
       # Configuración de servidor
       - SERVER_PORT=8080
