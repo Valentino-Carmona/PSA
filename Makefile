@@ -8,12 +8,15 @@ PROJECT_NAME := proyecto-api
 MAVEN := ./mvnw
 DOTENV := .env
 
-.PHONY: help dev clean install test check-env
+DOCKER_COMPOSE := docker compose
+FLYWAY_ARGS := -Dflyway.url=jdbc:postgresql://$$(PGHOST)/$$(PGDATABASE)?sslmode=require -Dflyway.user=$$(PGUSER) -Dflyway.password=$$(PGPASSWORD)
+
+.PHONY: help dev clean install test check-env flyway-clean flyway-repair flyway-migrate flyway-info db-reset setup build up down restart rebuild
 
 help:  ## Muestra esta ayuda
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-dev: check-env clean install  ## Inicia la aplicación en modo desarrollo
+dev: check-env  ## Inicia la aplicación en modo desarrollo
 	@echo "Iniciando la aplicación en modo desarrollo..."
 	@$(MAVEN) spring-boot:run
 
@@ -37,19 +40,19 @@ check-env:  ## Verifica que el archivo .env exista
 
 flyway-clean: check-env  ## Limpia la base de datos (Flyway)
 	@echo "Limpiando la base de datos con Flyway..."
-	@$(MAVEN) flyway:clean -Dflyway.url=jdbc:postgresql://${PGHOST}/${PGDATABASE}?sslmode=require -Dflyway.user=${PGUSER} -Dflyway.password=${PGPASSWORD}
+	@$(MAVEN) flyway:clean $(FLYWAY_ARGS)
 
 flyway-repair: check-env
 	@echo "Reparando la base de datos con Flyway..."
-	@$(MAVEN) flyway:repair -Dflyway.url=jdbc:postgresql://${PGHOST}/${PGDATABASE}?sslmode=require -Dflyway.user=${PGUSER} -Dflyway.password=${PGPASSWORD}
+	@$(MAVEN) flyway:repair $(FLYWAY_ARGS)
 
 flyway-migrate: check-env
 	@echo "Aplicando migraciones con Flyway..."
-	@$(MAVEN) flyway:migrate -Dflyway.url=jdbc:postgresql://$(PGHOST)/$(PGDATABASE)?sslmode=require -Dflyway.user=$(PGUSER) -Dflyway.password=$(PGPASSWORD)
+	@$(MAVEN) flyway:migrate $(FLYWAY_ARGS)
 
 flyway-info: check-env
 	@echo "Mostrando información de migraciones Flyway..."
-	@$(MAVEN) flyway:info -Dflyway.url=jdbc:postgresql://$(PGHOST)/$(PGDATABASE)?sslmode=require -Dflyway.user=$(PGUSER) -Dflyway.password=$(PGPASSWORD)
+	@$(MAVEN) flyway:info $(FLYWAY_ARGS)
 
 db-reset: flyway-clean flyway-migrate  ## Resetea la base de datos (limpia y migra)
 
@@ -62,31 +65,20 @@ setup:
 	fi
 
 # Construir la imagen Docker
-build:
-	@if [ ! -f .env ]; then \
-		echo "Error: Archivo .env no encontrado. Ejecuta 'make setup' primero."; \
-		exit 1; \
-	fi
-	docker-compose build
+build: check-env
+	$(DOCKER_COMPOSE) build
 
 # Levantar los servicios
-up:
-	@if [ ! -f .env ]; then \
-		echo "Error: Archivo .env no encontrado. Ejecuta 'make setup' primero."; \
-		exit 1; \
-	fi
-	docker-compose up -d
+up: check-env
+	$(DOCKER_COMPOSE) up -d
 
 # Detener los servicios
 down:
-	docker-compose down
+	$(DOCKER_COMPOSE) down
 
 # Reiniciar los servicios
 restart:
-	docker-compose restart
+	$(DOCKER_COMPOSE) restart
 
 # Reconstruir y levantar (útil para cambios en código)
-rebuild:
-	docker-compose down
-	docker-compose build --no-cache
-	docker-compose up -d
+rebuild: down build up
