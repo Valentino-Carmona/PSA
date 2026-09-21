@@ -5,8 +5,8 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![BDD Cucumber](https://img.shields.io/badge/BDD-Cucumber-23D96C?style=flat&logo=cucumber&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-3.x-C71A36?style=flat&logo=apachemaven&logoColor=white)
-![CI Status](https://github.com/Valentino-Carmona/PSA/actions/workflows/ci.yml/badge.svg)
-![Coverage](https://img.shields.io/badge/Coverage-Jacoco-brightgreen?logo=jacoco&logoColor=white)
+[![CI Status](https://github.com/Valentino-Carmona/PSA/actions/workflows/ci.yml/badge.svg)](https://github.com/Valentino-Carmona/PSA/actions)
+[![codecov](https://codecov.io/gh/Valentino-Carmona/PSA/graph/badge.svg)](https://codecov.io/gh/Valentino-Carmona/PSA)
 
 ---
 
