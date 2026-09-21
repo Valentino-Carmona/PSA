@@ -24,6 +24,7 @@ public class CreateProjectRequest {
     @FutureOrPresent(message = "La fecha de inicio no puede ser en el pasado")
     private LocalDate startDate;
     
+    @NotNull(message = "El cliente es obligatorio")
     private Integer clientId;
     
     @Future(message = "La fecha de fin debe ser futura")

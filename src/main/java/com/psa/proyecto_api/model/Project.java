@@ -99,7 +99,7 @@ public class Project {
      * Constructor para crear un proyecto con los campos obligatorios.
      */
     public Project(String name, Integer clientId, ProjectType type, ProjectBillingType billingType, LocalDate startDate) {
-        this.verificateParameters(clientId, type);
+        this.verificateParameters(clientId);
         this.name = name;
         this.clientId = clientId;
         this.type = type;
@@ -113,9 +113,9 @@ public class Project {
 
     // Metodos de gestion de datos basicos
 
-    private void verificateParameters(Integer clientId, ProjectType type) {
-        if (type == ProjectType.IMPLEMENTATION && clientId == null) {
-            throw new OperationNotAllowedException("El cliente es obligatorio para proyectos de implementación");
+    private void verificateParameters(Integer clientId) {
+        if (clientId == null) {
+            throw new OperationNotAllowedException("El cliente es obligatorio para todos los proyectos");
         }
     }
 
