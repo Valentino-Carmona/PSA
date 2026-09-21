@@ -1,0 +1,101 @@
+Bien, mi nombre es Gustavo Cuchina y bueno, yo estoy a cargo del área de implementaciones, entiendo que ya tuvieron una reunión con Maximiliano Gantt, que les contó un poco que nosotros les pasamos parte de lo que son el
+desarrollo del código de las implementaciones, pero lo que nosotros hacemos justamente
+en las implementaciones es registrar todo eso, básicamente lo que nosotros hacemos es
+la interfaz con el cliente, viene un cliente nos compro un producto, ese producto se lo
+vamos a instalar nosotros, nuestro equipo es el que termina implementando el producto en
+el caso del cliente, configurándolo, hay muchos productos, hay productos que son muy
+configurables, entonces esto lo que hacemos es toda esta primera parte de análisis con
+ellos para entender, digamos de qué forma quieren que se comporte el producto, entre las
+posibilidades que he llegado cada producto, entonces en base a eso está toda la parametrización
+y toda las configuraciones que hacemos el producto, cuando hay algo que necesita el cliente
+que escapa a esa parametrización posible, lo que hacemos justamente es ver con el
+cliente, cuál es qué posibilidades tiene, ahí una parte, una posibilidad es amoldarse a las
+formas en la que trabaja de herramienta, de fábrica, obviamente la opción más económica
+y hay veces que eso es muy central del correo del cliente o muy relacionado con alguna otra
+herramienta o con algún otro proceso que necesiten cumplir, o tal vez a veces con regulaciones
+específicas que necesitamos, que tengan algunos registros, algunas intervenciones, entonces
+ahí lo que se hace es customizar el producto, entonces de alguna forma tenemos tres niveles,
+primer nivel, el producto así como sale, segundo nivel, el producto con una configuración distinta, o sea no con la
+configuración defoult, sino con una configuración más específica y una tercer nivel que es ya no
+una configuración, sino una customizacion, sino un código que es propio del cliente. La
+versión más sencilla, como le decía es cuando están usando el código de fábrica digamos,
+pero más allá de ser sencilla de todas formas nosotros necesitamos registrar,
+entonces necesito saber para el cliente tal, para el producto tal que está trabajando con la
+versión, 4.5, si estamos hablando de que tiene una parametrización en particular podemos decir,
+bueno, el módulo de, o sea por decir algo, el módulo de cobranzas tiene configurado estos
+parámetros, por varias cosas, tenemos esto, por un lado lo hacemos con un tema de que es un
+registro de qué es lo que le configuramos al cliente, de qué es lo que hay que ir a configurar
+el cliente, es el punto de contacto entre lo que analizaron los consultores, los analistas que
+fueran al cliente revelaron qué es lo que necesitaba y el implementador que tiene que ir a la
+casa del cliente a configurar la herramienta, por un lado es uno de los motivos por los cuales
+tenemos que registrar esto, el otro motivo por el cual tenemos que registrarlo es justamente para
+que si en algún momento ocurre un incidente saber dónde estamos parados, que es lo que tiene
+configurado de este cliente como lo maneje y demás, por otro lado, sobre todo también lo que
+es lo que son las customizaciones, si estamos hablando de una customización, si viene un incidente
+por ejemplo no dice el módulo de cobranzas, me está funcionando mal por esto,
+poder saber qué, a para, vos no tenés el modo de cobranzas nuestro, tenés el módulo de
+cobranzas tuyo, específico, armado para vos, entonces tenemos que poder analizar de
+toda esa casuística que nos presenta el cliente en un entorno donde tengamos instalado este módulo
+en particular de este modo custom, entonces eso es importante registrarlo para nosotros,
+que nos quede, digamos, asociado a cada implementación, a cada cliente, toda la documentación referida
+a eso, la documentación tanto de los análisis, como de los resultados de esos análisis,
+el resultado de ese análisis me refiero a una parametría en particular o un
+historio de usuario, un caso de uso, un documento de requerimientos, lo que sea,
+acuerdo de la forma en la que esté trabajando, donde me digan, no, mira, esto no necesita que
+se comporta de esta forma, que eso después va a ser el input para el equipo de desarrollo,
+que va a desarrollar ese módulo customizado, pues eso es para nosotros es fundamental,
+tener todo ese, digamos, toda esa documentación de la implementación. Y después, justamente,
+ese requerimiento que nosotros hicimos, por supuesto, si estamos hablando de la versión más
+sencilla, que es el módulo "out of the box", o de la versión intermedia, que es la parametría,
+no me interesa tanto, eso queda en casa, esto es algo totalmente nuestro, ahora,
+cuando estamos hablando de un requerimiento, una customización, eso es un desarrollo,
+eso lo va a llevar al equipo de Maximiliano Gant, entonces nuestra área va a funcionar
+en conjunto con ellos, ellos van a tener un proyecto, cuyo Input va a ser los requerimientos
+que nosotros le damos, y ese, y ese proyecto nosotros vamos a estar interesados en que se
+lleve a cabo, porque nosotros somos los que vamos a dar la cara frente al cliente de cuando se
+instalemos, entonces tenemos que cumplir con los tiempos, necesitamos estar bastante atrás de eso,
+por eso queremos una herramienta que nos permita desde implementaciones ver el estatus de los
+proyectos que tiene, digamos, que pedimos nosotros básicamente, los proyectos que nos están desarrollando
+para nosotros, para nuestras instalaciones, queremos saber cómo vienen, para estimar tiempos,
+poder coordinar con el cliente otras actividades y demás, así que eso es un poco el panorama de dónde
+estamos parados nosotros, de nuestra problemática en particular, a ver si me estoy ordenando algo
+unas notas que puse, sí, a ver, creo que eso es todo lo que necesitaría de la herramienta,
+no sé si tiene alguna duda, con respecto a nuestro trabajo, o a lo que necesitamos de la herramienta,
+no no...
+
+Como les decía, tanto el área de Gantt, como nosotros trabajamos por proyecto.
+Tanto la implementación de un producto en casa de un cliente, como el desarrollo de una funcionalidad para este mismo cliente o para esta misma implementación, son dos proyectos independientes.
+Lo que sí vamos a necesitar es tenerlos de una forma identificados, que es un proyecto de implementación, que es un proyecto de desarrollo.
+Entonces ahí, si tenemos que tener alguna forma de agrupar los proyectos por estas características, ¿no?
+Puede identificar los proyectos de implementación para que solo vean los proyectos, y cuando quiero verlos de ellos, pueda provocarlos o filtrarlos en base de ese criterio.
+Miembro del Equipo de Desarrollo:
+-"Para preguntarle por lo último que dijo que no me quedó muy en claro, los dos proyectos son que sea del mismo cliente, son diferentes?"-
+Gustavo Cuchina:
+-"Uno es un proyecto de implementación, que abarca el punto a punto, desde que llegamos a casa de cliente, porque nos compro un producto hasta que ese producto con todas sus configuraciones, customizaciones y demás esté instalado y ya funcionando.
+Mi proyecto, ahora también va a haber otro proyecto que va a ser el desarrollo de una de las customizaciones, si puedo tener en proyectos asociados a esto, que es el desarrollo de las customizaciones que puedan llegar a seguir de esta instalación, de esta implementación.
+Cada uno de esos proyectos es un proyecto de la idea de desarrollo, entonces si quiero ponerme a ver ese proyecto de la area de desarrollo, que pueda filtrarlos de cierta forma,
+para acceder a los proyectos de desarrollo. Ahora, para mi día a día, lo que a mí me interesa son los proyectos de implementaciones, quiero también de dar una forma de filtrarlo, que yo digo, bueno, mostrarme los proyectos de implementaciones como vienen, y que solamente vean pantallas a esos, y no los de desarrollo."-
+Miembro del Equipo de Desarrollo:
+-"Perfecto, y se debería de poder mostrar los proyectos de implementaciones asociadas a un proyecto particular de implementación.
+Es decir, el filtrado es solo quiero ver lo de todo lo de desarrollo o el filtrado es más específico, y es quiero ver lo de desarrollo que estén trazados a este proyecto de implementación?"-
+Gustavo Cuchina:
+-"A ver, yo no lo relacionaría en forma directa, o sea, no creo que sea pensando un poco en lo que es el trabajo nuestro, y que el producto también sea vendible a otros.
+No, no le veo un beneficio en esa relación entre proyectos.
+Entonces, tal vez lo que sí, puede llegar a ser útil es que los proyectos podamos tagearlos o tener algún campo donde nosotros podamos hacer filtrado por texto.
+Entonces, si yo estoy hablando de, o tal vez lo podemos llegar a ser incluso en el título del proyecto, tener algún tipo de una nomenclatura propia, que le ponemos antes del nombre del proyecto de desarrollo, le ponemos cuál es el proyecto de implementación que está asociado.
+Se me ocurre en diferentes formas de relacionarlos.
+Tal vez lo de los tags sea más útil y más vendible también, es una característica de por ahí, puede llegar a servir para el producto que vendamos.
+Entonces, yo, de esa forma, también, tagueo. Entonces, un mismo proyecto tiene el tag de que está...
+No, el tag de proyecto de implementación tiene un tag de el cliente que está, tiene un tag de el producto que está.
+Entonces, yo, de repente, buco todos los proyectos relacionados a un cierpo cliente y me van a salir todos los proyectos que están relacionados a un cierpo producto, incluso por ese lado.
+Entonces, me parece que eso puede llegar a ser únicamente justamente, si estoy buscando, si estoy cruzando por el tag del cliente, tal vez ve a los productos.
+El proyecto de implementación, más el proyecto de desarrollo que está relacionado a ese proyecto de implementación.
+Me parece que esa puede llegar a ser una buena funcionalidad para detallear los proyectos para después filtrarlo y poder verlo, decirte, diferentes dimensiones.
+
+Si no quedan más dudas, yo lo que les propongo es que cualquier cosa que cualquier duda que le surja,
+llegado el caso, podemos llegar a la reunión, no habiendo dudas en este momento,
+tal vez no sea necesario, sino que le podamos solventar cualquier inquietud
+con a través de Bruneleschi, que es el produjo owner, y con ella definimos bastante esto,
+esto ya lo que yo ya hablamos con él, así que nada, o lo que necesiten me vizan y lo vamos revisando.
+Ok, muy bien, muchas gracias a todos, buenas noches.
+Buenas noches.

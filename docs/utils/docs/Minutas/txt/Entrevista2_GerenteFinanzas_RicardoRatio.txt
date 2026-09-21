@@ -1,0 +1,424 @@
+Bueno, buenas noches a todos.
+Me presento mi nombre es Roberto Ratio.
+Soy gerente de finanzas en PSA desde hace ya 17, 18 años.
+Me dijo Juan que ustedes estaban trabajando en este nuevo proyecto que estamos teniendo en la empresa.
+Me gustaría contarles un poco cuál es el enfoque que queremos darle, cuáles son las preocupaciones al menos de mi área.
+Entiendo que van a tener más entrevistas con Fernando, con Juan Pablo, pero por lo pronto yo les puedo contar básicamente dónde me apreté el zapato a mí.
+¿Qué es lo que pretendo yo solucionar con este nuevo software? Esta nueva herramienta.
+Como os imaginan desde el punto de vista de las finanzas, a mí me preocupa la entrada y la salida de dinero de la empresa.
+Y en ese sentido últimamente hemos tenido algunos problemas con proyectos que lamentablemente se dan subfacturado.
+Entonces me gustaría tener una herramienta, tener algún mecanismo que me permita que eso no vuelva a pasar.
+Entonces como es que se factura los proyectos, hoy en día los proyectos se los facultuamos al cliente, fundamentalmente hace más proyectos de lo que llama "Time and Material".
+El proyecto donde les cobramos al cliente las horas insumidas. Tenemos algún que otro proyecto de tipo "Llave en mano", pero como os imaginan esos no me preocupan porque, si gastamos más horas, de todas formas va a ser un problema nuestro, el problema justamente es en los proyectos de "Time and Material" gastar más horas y no cobrarselas.
+Entonces, mi intención es que este nuevo sistema por cada proyecto que encaremos, tengamos algún sistema de registro de horas donde la gente que trabaja pueda decir "estuve trabajando en este proyecto" y de esa forma nosotros después poder trasladarle ese costo al cliente.
+Yo tendría que poder entrar a un proyecto de X y decir bueno a ver este proyecto cuantas horas lleve insumida tanto. Entonces que me me pueda decir cuantas horas insumidio el proyecto.
+También tendría que poder preguntarle cuantas horas insumio desde el último corte de facturación, entonces poder agarrar y decir listo.
+El a fin del 2024 le hicimos la última factura desde fin de 2024 hasta hoy que cuantas horas insumieron en este proyecto.
+Que me lo pueda decir poder por un lado capturárselo y por otro acero una marca digamos de listo hasta acá se le hizo una otra factura más.
+Entonces así la próxima vez que vaya a verlo pueda decir de repente bueno a ver cuantos se, este, cuantos es consumido desde la última factura.
+Ah mira, la última factura fue el 10 de abril a partir de ese momento se consumieron tantas horas y así poder ir haciendo los cortes del proyecto o directamente cobrar el proyecto de cuando se termina.
+Y ver el total de las horas de que empezó el proyecto hasta hoy cuantas horas lleve insumidas ese proyecto.
+Eso digamos que es la principal preocupación, la preocupación más grande por lo que le decían en temas de facturar los proyectos.
+Por otro lado tenemos otra, ya has dicho rigor con la entrada de plata, ¿sí?
+Cuando vamos a ver la salida de plata me preocupa el tema de los acuerdos de nivel de servicio.
+No sé si saben, no sé, entiendo que todavía no tuvieron entrevistas con, con más gente, soy el primero pero vale les cuento.
+Nosotros una de las, de los servicios que le vendemos a los clientes es el soporte, soporte las herramientas nuestras, ¿no?
+Y ese soporte tiene un acuerdo de nivel de servicio, ¿sí? Si el acuerdo de nivel de servicio dice bueno, si vos tenés un en sistema parado por ejemplo,
+este parado significa un prioridad uno, ¿no? Con ese sistema de tenido yo tengo que darle respuesta en una cierta cantidad de tiempo, ¿no?
+Con varía de acuerdo de cliente, varía de acuerdo de contrato, ¿no? Hay varios situaciones, ¿no?
+Pero lo cierto es que yo, a partir de esas situaciones que son características de cada contrato, tengo un tiempo para responder.
+Sí, los prioridades uno se responden en tanto tiempo, los prioridades dos se responden en tanto tiempo y así sucesivamente, ¿no? ¿cuatro prioridades que tenemos?
+Pero si la gente de soporte que está tendiendo a ese, a ese incidente se excede de ese tiempo por contrato a nosotros nos corresponden a multa.
+Entonces, primero y principal, yo quiero saber de cuando es la multa para cada contrato y por el acuerdo que me avise, si estamos en el un incidente de estas características, ¿no?
+Así de repente, tengo un incidente prioridad uno, se resolvieron 10 minutos, no me quiero entrar, ¿sí? Ahora, si el tiempo respuesta, si el acuerdo de nivel de servicio,
+dice que tenemos que responderle en, digamos, cuatro horas y ya pasaron dos horas y medio y todavía no está resuelto, quiero saberlo.
+Porque ahí voy a empezar a levantar el teléfono y voy a llamarlo a Juan, a Juan Pablo y a todo el equipo para que haces el incidente porque no podemos perder un acuerdo de nivel de servicio.
+Es mucha hita que se nos va por eso. Entonces, fundamentalmente eso, ¿no? algún tipo de alerta al momento de, cuando se cumpla, se digamos el 50% del 60% del tiempo del acuerdo de nivel de servicio, yo quiero saberlo.
+Y no solo yo, seguramente, Juan le va a pedir saber tú también, Juan Pablo, por supuesto. Son cosas que tenemos que saber.
+Desde la dirección de PCR tenemos que estar el tanto para accionar los mecanismos que haga falta. No, no puedo perder más al acuerdo de nivel de servicio por un tema económico y por un tema de imagen también.
+Ya después los clientes no van a agregar contacta más, soporte, si tú está tardamos un montón.
+No puedo nos van a poner la penalidad de más fuerte. Entonces, ese es el segundo tema importante que me gustaría ver.
+Por supuesto, si bien yo lo tengo hoy en otro formato, me gustaría poder relacionarme con esta herramienta nueva de forma de poder ver los proyectos que hay dando vueltas o los proyectos que están,
+digamos, lo que se llama en el pipeline, no, en lo que está por venir, cuáles van a ser chave en mano, cuáles van a ser tipos de más material.
+Para poder entender un poco también, como venimos, también eso nos da un poco la idea y esto ya es un trabajo en equipo, no es que lo hago solo.
+Esto es un trabajo en conjunto de las gerencias, poder entender qué proyectos están viniendo para poder prepararnos en cuanto al equipo de trabajo.
+Si tenemos que salir a contrater gente, si tenemos que chica de equipos porque no hay proyectos, esto es ese tipo de cosas, es importante saberlo y esta herramienta entiendo que nos lo tendría que poder dar.
+Y justamente como nosotros ya tenemos un par de herramientas que usamos hoy en día, que son el PCRM y el IRP, estaría bueno esto que se relacionen, que yo pueda ir con el mismo número de clientes que yo uso en el PCRM,
+podría identificar un cliente dentro de este software y que me pueda decir qué proyectos tengo con ese cliente o qué servicios del soporte tengo con este cliente.
+O sea que se vinculen, que se vinculen el CRM con este nuevo producto y tal vez justamente con el IRP, si lo voy a estar facturando esas parcelas, las voy a cargar el IRP y yo tendría que poder ponerse antes.
+Yo hice un corte del cliente X, le hice un corte del proyecto a fin del año pasado.
+Ya le facturé, bueno esa factura tiene que estar, tengo que de alguna forma poder relacionarla y acceder la factura del CRM pero del IRP que ya tengo emitida desde el proyecto.
+Entonces yo podía ver el proyecto total, buenísimo, se lo facturamos, en diciembre tienes la factura número 3, 4, 5, 6.
+Ah, listo, a verla, la pagar no la pagar.
+Poder, si bien son distintas herramientas, poder vincularlas y poder cruzar información entre uno y otra, no?
+Con la información de los proyectos.
+Por otro lado, entiendo hasta donde me contaron eso, después lo van a ver con más con la gente desarrollo, ¿no?
+Pero entiendo que la idea de estos proyectos es que los proyectos tengan tareas y gente asignada las tareas y tal vez tiempos de reinicio y de fin de nada tarea y de duración, etcétera.
+Y en, no sé si hay que decirte en el tema, pero en otras áreas nuestras y en otras actividades, si manejamos algún tipo de proyecto y lo manejamos con proyecto, con Microsoft Project.
+Con lo cual es, me resulta más amigable, me estoy más acostumbrado a esa otra interfaz, con lo cual ahí me gustaría poder tener alguna interacción, ¿no?
+Que los proyectos que tengamos almacenados en esta herramienta, los podamos exportar a proyecto y viceversa.
+Tal vez un proyecto, ya armado de un proyecto particular, puede decirle, bueno, las tareas de este proyecto son estas que te importo desde este proyecto.
+Y ya traer toda esa información de tareas, recursos, tiempos, dependencias y demás a nuestro sistema, ¿qué?
+Bueno, yo entiendo que va a tener toda esa información respecto de un proyecto, ¿no? de las tareas que se desarrollan en un proyecto.
+¿Qué más? ¿Qué me está faltando?
+¿Te va horas? A ver, vuelvo un poquito al tema de las horas. La idea es que todo desarrollo, cara de sus horas ahí.
+Podrás ser una trazabilidad, o sea, si bien lo que pasa me importa, es facturarla a los clientes los proyectos, que es fundamental, ¿sí?
+De lo que vive la empresa, también quiero tener algún control de justamente cómo está distribuido el trabajo entre los diferentes equipos.
+Entonces lo que quiero entender es eso, cuantas horas le insume cada proyecto a cada equipo y tal vez la parte de ahí podrá detectar su utilización de recursos.
+Hoy la gente no está cargando horas, con lo cual yo no sé si le dedicaron dos horas al proyecto y seis a tomar mate o viceversa o estuvieron las ocho horas apúl en el proyecto.
+Entonces la idea acá es que todos los recursos al final de la semana o en forma diaria, no eso podemos verlo, pueden cargar de las horas a los proyectos.
+Yo estuve hoy en la reunión, por ejemplo, esta hora que estamos acá, esta media hora un poquito más que vamos a estar acá en esta reunión.
+Yo esa hora tengo que cargar al proyecto que están desarrollando ustedes y tendría que tener en ese ambiente un proyecto y yo puedo decir, yo trabajé estas horas y todos ustedes también, ¿sí?
+Imaginando, ¿no? ¿Están trabajando en Pesea?
+Cargan la hora a ese proyecto, entonces ya ese proyecto va a tener un costo asociado de, si, señora, mató a la solución de como cuarentipico de horas, de trabajo invertido en él.
+A lo largo del proyecto se va a seguir suando horas, pero lo importante es eso, no es solamente que el proyecto va a tener cuarentipico de horas, sino que yo voy a haber registrado que una hora la trabajé en eso y después otras horas las voy a haber trabajado en otras cosas en otros proyectos.
+Entonces tenemos que, de esa forma vamos armando un rompecabezas de cómo los equipos de trabajo trabajan en cada proyecto y ahí podemos hacer unas cuantas, unas cuantas deducciones y tomar unas cuantas decisiones y a veces que nos pasó que por tema de prioridades
+había proyectos en las que se le sacaron recursos, pues habitual eso, le sacamos recursos, son proyectos porque había otro que quemaba y el que conocía de ese tema estaba en el otro proyecto, lo trajimos, pero después nos atrasamos con el otro proyecto, y eso hay que administrar.
+Entonces, poder tener una mejor visibilidad de cuánto se está trabajando en cada proyecto, cuantas horas se están poniendo si llegamos con los tiempos o no, eso ya estaría a los proyectos, pero poder tener ese registro es importante para poder tomar las decisiones con respecto al malos equipos y al desempeño también de esos equipos.
+Por ahora no se me estoy ocurriendo mucho más, no sé si ustedes tienen preguntas y aparte de hipótesis me ocurre que más le tenía para decir.
+Respecto a la parte de horas y registrar datos en un proyecto, hay algún otro gasto por afuera de los quesoras, algún coste caminario, sí, si la idea, a ver me gustaría que podamos también asignar de otros costos para proyectos, los coblos proyectos tienen otros costos, si bien son proyectos de desarrollo
+en la mayoría de los casos y la mayoría de los costos son horas hombres, también hay otros costos asociados, si y de repente el alquilar de los servidores en AWS o pagar una licencia o pagarle un curso a algunos de los integrantes del equipo para que se especialice en una herramienta que va a usar en ese proyecto en particular, son todos costos.
+Entonces me gustaría tener algún mecanismo por el cual pueda imputarle esos costos al proyecto, sí, que el que el proyecto tenga, el costo total del proyecto en definitiva está formado por las horas y el costo de las horas hombres después de esas horas se multiplicarán por el rey de cada empleado, ¿no?, cada cuanto cuesta cada empleado y eso me va a dar un costo de horas.
+Pero por otro lado tengo todos estos, estos otros costos asociados, bueno esto básicamente yo lo que voy a tener tendría que poder imputarle facturas, sí, entonces yo tengo un proyecto de X y bueno esto como les decía, el curso de tal herramienta, sí, bueno, le imputo al proyecto, entonces me salió 10, son 10 más que se suban al costo del proyecto, sí, así suessivamente.
+En gracia por hacer valor a eso tuvo muy buena pregunta.
+Sí, vayan.
+Una consulta, Roberto, cada cuanto ustedes estarían viendo el tema de horas para sin unas recursos a los unos proyectos, cada cuanto necesitarían
+No, a ver, no es salvo, lo necesitamos en el momento, sí, por qué esas son cosas que van surgiendo todo el tiempo.
+Es información que se consume en forma diaria por los diferentes equipos del proyecto, ya sea el equipo de ventas que está viendo a ver cuánto se desocupa algún equipo o algún recurso en particular para ver
+cuando le pueden ofrecer que empiece el proyecto a algún cliente, desde finanzas lo estamos viendo también por un tema de costos, por supuesto la gente de proyectos lo necesita ver a un instante.
+No me interesa tanto la generación de reportes que seguramente vamos a tener reportes, ¿no?
+Pero me interesa más tener la información, viva en pantalla, sí, tenerla al instante.
+Sí, ¿no?
+Necesitas información en la gente que arrata en los proyectos.
+A ver, yo no a mí para mí es transparente, entiendo que la gente de proyectos puede ya recitarlo, no tanto la rotación en sí, sino el hecho de saber quién está trabajando en qué momento en cada proyecto.
+¿Por qué esto tiene que ver también con la asignación, como les decía, con el ejemplo que daba de ventas, tienen que poder saber dónde está cada persona en cada proyecto, porque realmente tenemos gente, hay especialistas en particular que los tenemos asignados en cinco proyectos.
+No le puedo meter un proyecto más porque ya no les da cabezas, los estamos quemando, tanto proyectos al mismo tiempo.
+Y hay otra gente que está en un solo proyecto, sí, que está dedicada 100% a un proyecto, entonces eso tendríamos que poder verlo, sí, en qué proyecto está cada persona.
+Sí, Cristiano.
+¿Qué tal, buenas noches?
+Respecto a los proyectos, necesita un mecanismo para poderse quedar algunas prioridades y los tiempos de respuestas. ¿Y si hay alguna reflexión para eso?
+La verdad que nosotros sabría responder, las prioridades, si bien las, hoy en día la manejábamos, ¿no?
+El equipo de jerencia lo estamos todo el tiempo viendo, atendiendo ese tipo de cosas, porque tenemos contacto con los clientes, los clientes nos preguntan cuando voy a estar el proyecto,
+tan sabemos que tenemos compromiso a sus unidos y tenemos que gestionar todos esos cambios de equipos de trabajo, de urgencias y demás.
+No sé si la gente de proyectos en sí va a querer tener eso en la herramienta o lo van a manejar de otra forma externa.
+Es una pregunta que estaría buena hacerse a ellos, la verdad que no te lo se respondan, puede decir que no, la verdad que no, como no es mi área, no me atrevo a responderte.
+Sí, Tomás.
+Este pregunta respecto a los acuerdos de nivel de servicio.
+Me mencionaste que querías que se te notifique cuando, por ejemplo, suys un problema que el equipo de soporte tiene que responder dentro de una entera de cuatro horas,
+pero que si a las dos horas y media, todavía no se resolvió, ¿quién es el tema de ti?
+Bien, ¿cuál es este límite, este umbral real?
+Sí, tal vez puede ser 50% por ciento del tiempo total, si al 50% del tiempo total no está encaminado del tema, no está resuelto, ¿sí?
+Si el ticket no se cerró en la mitad del tiempo y ya tenemos que estar al tanto, podrá accionar.
+Y yo podrá ponerle una relación a, supondamos que surgen dos problemas de ese día, uno con dos clientes separados,
+se va a agregar a alguno o a otro.
+Sí, eso estaría de aguanti, que es el responsable de soporte, pero eso no hay no me viento.
+Yo me quiero entrar a dos dos.
+Sí, quiero saber que hay dos que todavía no cumplieron, después nos agarraremos a las piñas para aguanti.
+Bien, ¿en caso de ese incumple acuerdanía de servicio, la multa de donde sale el número?
+El contrato, cada contrato tiene estipulados sus tiempos y sus multas.
+Sí, Tomás.
+No, Tomás.
+Vártir.
+Yo sí, buenas noches.
+En un momento mencionaste como visión tenía que sea una plataforma integrable con lo que se reme y ARP.
+Y también mencionaste Microsoft Project como una herramienta que usan a mi día.
+Y que estaría bueno que la información,
+los proyectos que se van a manejar en la plataforma de desarrollar,
+puedan pasar también a Microsoft Project.
+Algo que hablamos con Juan Seb, es que la idea es que la plataforma de desarrollar con solide toda la información
+que hoy día hay en distintas plataformas.
+Entonces, ¿de consulto cómo crees que sería algo?
+Si acuales el objetivo de que el proyecto esté en esta nueva plataforma que queremos desarrollar
+y también salga, o sea, se ha exportado también a Microsoft Project.
+No, sí.
+A ver, la idea de poder exportar los Microsoft Project tiene que ver con un tema de portabilidad.
+Sí, muchas veces tengo que ir a reuniones con proveedores para coordinar algún tema
+y hablamos del proyecto y lo hablamos en el aire.
+Hoy en día, yo me llevo el proyecto.
+Sí.
+Y les puedo compartir pasar un mail con el proyecto y diciendo, mira, las tareas,
+las tareas en las que iríamos a involucrarlo a ustedes son las tareas A, B y C.
+Sí.
+Si tengo un sistema al cual mi proveedor no tiene acceso, que entiendo que pasera así,
+no le puedo mostrar nada.
+Sí, entonces la idea de poder exportarlo es esa.
+La misma forma que todavía no lo tengo muy inclaro,
+tal vez más adelante cuando vea algún prototipo el producto,
+les puedo llegar a pedir también que algunas tablas las podamos exportar Excel.
+Sí, porque me muero mucho más como con Excel, agográficos, algo de...
+Dios, filtro, filtro de información, agrupo y demás.
+Y por eso no tiene sentido que se las pida, meten en el software,
+cuando todavía no tengo claro que es lo que voy a hacer.
+Entonces, inicialmente tal vez sí exportar la información Excel,
+yo después ahí hago lo que ya hace hacer con Excel
+y puede eso transformarse el día de mañana en una versión posterior del producto
+en algún reporte standard o son cosas que muchas veces son del momento.
+Quiero filtrar todos los inscientes severidos del cliente X
+que no cumplieron la blah, blah, blah.
+Por eso me exporto todo, me lo filtro, yo ya está.
+Pero, respondiendo a tu pregunta, tiene que ver con eso.
+Sí, compartido la información.
+Perfecto, gracias.
+Ahí entendí mejor por dónde iba la visiente.
+Me encanta.
+¿Un otra pregunta?
+Sí, ahora sí, Tomás.
+¿Vos que te escuchan?
+Muy bien, ahora sí, ahora sí.
+Pero pregunta acerca del tema de ampliación.
+¿El software va a tener que poder emitir facturas?
+No.
+No, el software no emite facturas.
+El que emite el software es el IRP.
+Sí, eso no lo vamos a cambiar.
+IRP va a seguir siendo el que concentre todo el tema de factoración.
+Sí, tengo que poder relacionar esa factura.
+Pero la factura va a vivir en IRP.
+Por eso, esto este software nuevo va a tener que poder
+de alguna forma comunicarse con el IRP para pedirles esa factura,
+para poder mostrar esa factura o para decirles esa factura,
+estar relacionada conmigo.
+Ya sea facturas que emitimos nosotros como facturas que pagamos nosotros,
+como les decía, los costos de los proyectos.
+Sí, yo lo voy a un costo de un proyecto,
+lo voy a asociar con una factura que tengo en el IRP.
+Yo pagué la factura de AWS de los servidores
+de los que tenemos justiado un servicio para un proyecto.
+Esa factura, yo le voy a decir, este costo de esta factura,
+es de este proyecto.
+El IRP, el software va a tener que poder ver lo que tiene el IRP
+para poder decir, la factura 35-42 son 3000 dólares.
+Listo, le imputo 3000 dólares en base del proyecto.
+Ok.
+Ok.
+Y en ese sentido que esa factura se no se cargue de la mano.
+Claro, claro.
+Esa factura, no.
+A ver.
+Por eso me decís imputar.
+Eso es una persona que ve la factura en IRP y la carga mano, ¿no?
+El exacto.
+Si esa relación, esa relación, de decirle,
+esta factura es de este proyecto, va a tener que ser mano.
+Sí, hace mal.
+A alguien va a tener que cargar la factura.
+Sí, sí, sí, sí.
+Se envían el exacto.
+Sí.
+O sea, el IRP tenemos pagado 200 facturas por día.
+Sí.
+Ahora, alguien va a tener que decir,
+esta factura de este curso o esta factura de AWS
+por estos servidores es del proyecto A.
+Y esta factura de este curso que le pagamos a estar empleado
+es el proyecto B.
+Sí.
+Y así.
+Y también hay otros tantas facturas que no sé,
+la factura de luz de la oficina,
+no se le imputamos en un proyecto.
+Ok.
+Perfect.
+Sí, Christian.
+Sí, dado que se establece el presupuesto por contrato
+antes de ejecutar algún proyecto.
+¿Qué ocurre en el caso de que haya algún cambio
+requerido por el cliente en algunos de los proyectos
+como se modificaría el presupuesto?
+Y si también esto estaría orientado a determinar
+el tiempo, o sea, en cuanto al tiempo del proyecto
+para cada integrante del proyecto.
+Bueno.
+Te cuento porque lo sé,
+pero es una pregunta más para la gente de proyectos, ¿no?
+Si bien, como les decía antes,
+los proyectos,
+la mayoría son
+Timon Material.
+Sí.
+Si el cliente pide un cambio
+que lo pida, lo apaga.
+Sí.
+No me preocupa tanto.
+Sí, me preocupa mucho.
+Si el pide un cambio en un proyecto que es Fixed Price,
+en un proyecto ya ve mano, de factura fija.
+Sí.
+En esos casos, como una práctica común de project management,
+lo que se hace es un control de cambio.
+Sí.
+O sea, el cliente dice,
+bueno, ahora quiero,
+lo secita de colores acá.
+Ok, listo.
+Entonces, lo que se hace parabra.
+En el alcance original del proyecto no estaba estipulado
+tú quieres ser lo que necesita de colores.
+Entonces,
+hacemos una estimación de cuánto costaría
+en la lucidez de colores que está pidiendo ahora,
+que se le ocurrió ahora que quiere,
+y le decimos,
+mira, esta lucidez de colores le agregarían
+10 mil dólares y dos meses al proyecto.
+Por ejemplo, estás de acuerdo.
+Si estás de acuerdo, se hace un control de cambios
+y si le agrega ese costo y ese tiempo al proyecto,
+si no está de acuerdo,
+estamos con el alcance original y no pasa nada.
+Sí,
+lamentablemente,
+nos comemos el costo
+de acepto de estimación.
+Sí, porque esa nacería puede mejorar.
+Pero bueno,
+está contemplado entre los costos de proyecto.
+Sí, Tomás.
+Entonces, para ver si entendían,
+pueden haber
+poras de costo que no son incomparable.
+Sí.
+Sí, a ver,
+de nuevo.
+Tenemos dos tipos de proyectos.
+Proyecto llave en mano
+y proyectos taima material.
+Si el proyecto es
+taima material,
+todas las horas
+se las vamos a trasladar a cliente.
+Sí.
+No, ok. Bien.
+Claro, a mí lo que me concluyó
+para...
+Yo creo que lo concluyó fue la parte de
+yo le...
+Ah, perdón, esto aplica solamente la chave en mano, ¿no?
+Exactamente.
+El costo de hacer la investigación o bueno,
+el estimar exactamente.
+Exactamente.
+Sí, esto perfecto.
+El que va justamente ese cuando nosotros tenemos un proyecto
+llave en mano
+de alguna forma tenemos un margen de riesgo.
+Sí.
+Entonces, si el proyecto
+nosotros lo estimamos,
+que va a hacer, no sé,
+diez mil horas,
+no le vamos a cobrar al cliente
+las diez mil horas.
+Sí.
+Por el decoramos 11.
+Sí.
+Sí.
+Esa milora de diferencia,
+que es la geración.
+Es un ejemplo.
+Sí.
+Son justamente por este tipo de contingencias.
+Sí.
+Porque tengamos que hacer estimaciones,
+por posibles debidos del proyecto,
+y otros,
+este ítems, no, riesgos,
+y demás.
+Sí, pero...
+Bien.
+¿Algún otra pregunta?
+Bueno.
+A ver.
+Si no hay más preguntas...
+Yo tengo una pregunta más.
+Sí.
+¿Quién?
+La lista.
+Si se lanza la leer, digamos,
+si se pasa,
+incluso se pasa al tiempo,
+y no se arregla el problema,
+ese costo se le suma el producto.
+El producto,
+el proyecto,
+el proyecto,
+el proyecto,
+el proyecto,
+el proyecto,
+el proyecto,
+el producto,
+el proyecto.
+No, no,
+porque son cosas distintas.
+Sí.
+Por un lado tenemos los proyectos,
+que son cosas que desarrollamos nosotros,
+desarrollamos, adaptamos,
+son diferentes servicios que podemos dar,
+y por el otro lado,
+son...
+el...
+como se llama,
+contratos de soporte.
+Sí.
+Entonces,
+las multas son costos de la empresa.
+Sí.
+No es del proyecto,
+ni del contrato de soporte.
+Sí.
+El contrato de soporte tiene un ingreso por arriba,
+porque si tenemos un contrato de soporte,
+en el cual le restamos las multas,
+tendríamos a esta altura,
+creo que hay un par de contratos,
+que nos tendríamos en negativo.
+Sí.
+No, no tiene mucho sentido.
+Entonces,
+los tratamos como cosas distintas.
+No, no lo asociamos directamente.
+Muy bien.
+Gracias.
+Me da nada.
+Bien.
+Creo que estamos...
+Cualquier cosa de todas formas,
+yo estuve hablando,
+ya con Tomás,
+que fue justamente con él,
+armamos todos los innovantes generales del proyecto,
+cualquier duda que tengan,
+si hace falta,
+por un lado le pueden consultar él,
+él me puede consultar a mí,
+llevo el caso,
+también con Leonardo,
+podemos coordinar otra reunión.
+Sí.
+Así que no,
+no tengan problemas,
+si hace falta,
+podemos hacer otro reunión para seguir preguntando,
+o mejor dicho, no.
+Tenemos diferentes mecanismos
+para aclarar los temas que les vayan surgiendo,
+sobre todo,
+entiendo que esto es mi,
+soy el primer entrevistado,
+cuando empiezan a cruzar la información con otra gente,
+tal vez no tengamos la misma visión,
+con mis compañeros,
+y tengamos que aclarar algunas cosas
+o decidir hacer las cosas de cierta forma u otra.
+Así que, bueno,
+lleve el caso,
+no, no,
+estamos poniendo el contacto para soluciones o temas.
+Ok.
+Bien,
+por el momento eso sería todo,
+entonces,
+cualquier cosa me consultan.
+Muchas gracias.
+Gracias.

@@ -1,0 +1,175 @@
+Vamos a estar construyendo un sistema, que va a abarcar todo el cuatrimestre de la facultad que nos queda por el delante.
+
+Vamos a estar armando un sistema de gestión, me voy a presentar a mi nombre es Tomás Bruneleschi, soy el PO de PSA.
+ 
+Y lo que vamos a trabajar en los próximos meses, es un sistema de gestión, y la idea es contarles un poco que es lo que buscamos hacer con este sistema.
+
+Ustedes van a estar trabajando primero haciendo el análisis del sistema, durante el cuatrimestre van a estar entrevistando a diferentes interesados y expertos en los diferentes procesos que queremos automatizar.
+
+Y la idea es que primero diseñar y después construir.
+
+Para ello, van a estar interactuando con otros módulos, algunos de ustedes van a estar trabajando en unos módulos y otros en otros módulos. Y la idea es que los módulos van a estar interactuando entre si.
+
+¿Cuál es la visión? ¿Qué es lo que quiero lograr con este sistema? Un poco de contexto:
+
+Nosotros somos una empresa que tiene diferentes sistemas.
+Principalmente operamos acá en Latinoamérica, tenemos por ejemplo, un CRM, un IRP y pensando un poco en las necesidades de nuestros clientes, una de las cosas que nos dimos cuenta es que no está faltando un sistema que permita básicamente centralizar la información y que nos ayude a tomar decisiones de una forma más efectiva.
+
+Es decir, queremos habilitar lo que es la toma de decisiones en base a datos para mejorar los procesos internos y externos con la idea de conseguir una ventaja competitiva por sobre nuestros competidores.
+
+Y convertir a las empresas que usan este sistema en lideres en su segmento.
+
+PSA ya tiene ciertos productos, por ejemplo, un IRP, tiene un CRM y la idea de este sistema es también empezar a ofrecerlo como parte de nuestra cartera de productos.
+
+Lo que es muy importante para nosotros es que haya diferentes módulos y que estos módulos estén interconectados.
+Por darles un ejemplo:
+-"Si tenemos un listado de clientes, no queremos que cada módulo cuente con una base de datos de clientes diferente."-
+
+-"Si tenemos empleados, queremos emplear un día que se ha registrado varias veces en el sistema."-
+
+-"Queremos que cuando calculamos las finanzas del sistema, tenga información de los proyectos, tenga información de los recursos, tenga información de las ventas. Tienes que estar todo interconectado."-
+
+-"Creemos que un sistema, para el siglo XXI, tiene que poder ser utilizado por diferentes periféricos.
+Se tiene que usar con celulares, tablets, y con otras integraciones varias."-
+
+Con eso hablamos de por arriba lo que sería la visión del sistema. 
+Pasemos un poco a lo que es la estrategia. ¿Cómo vamos a tratar de realizar esta visión?
+
+Este es un punto muy importante porque va a definir bastante el cómo lo vamos a hacer.
+
+Como ya les decía, queremos incorporar este nuevo producto a nuestra cartera existente de productos de PSA.
+
+Ahora lo que vamos a hacer, que no es obvio, pero lo queremos hacer, queremos usarnos a nosotros mismos, queremos usar a PSA como el primer cliente para validar la solución propuesta.
+
+Esto no es algo tan original, se conoce como It's Your Own Talk Food.
+Básicamente la idea y esto fue utilizado por empresas, por ejemplo Amazon el pasado, cuando desarrollaron lo que era su servicio de web services AWS.
+Inicialmente antes de ser un producto que desplegaron en todo el mundo lo pusieron disponible para sus desarrolladores.
+Y básicamente lo que dijeron, construyamos algo tan bueno hacia adentro pero que también después le pueda servir a otra gente.
+
+Y esa es la estrategia que queremos seguir, queremos construir algo para nosotros, pero que también después podamos vender.
+¿Y por qué queremos también considerarlo para nosotros?, porque nosotros creemos que tenemos muchos de los problemas que este sistema va a tratar de resolver.
+
+Y como tenemos muchos problemas, pero también tenemos mucho conocimiento alrededor de los problemas.
+Entonces queremos usar a los líderes especialistas de PCA para diseñar la solución que vamos a utilizar.
+
+Vamos a ver ciertos interesados que van a ser clave en el desarrollo de este producto.
+Y nosotros tenemos que ser inteligentes, porque sí, por alguna razón nos ponemos a una de estas personas en contra, entonces va a ser más difícil que nuestro producto sea excelente.
+Entonces, nos tenemos que asegurar de que les escuchemos y que después los priorizemos.
+
+Al final del día de hoy, el que tomará la decisión de, por ejemplo, si empezamos con Finanza, con Venta, o solo Marketing, voy a ser yo (Tomás Bruneleschi), en mi carácter de Product Owner.
+Si el sistema no funciona, la cabeza que va a volar es la mia.
+Yo tengo que hacer un producto que funcione y que después el día de mañana se pueda vender.
+
+Para que el producto funcione y el feedback de los interesados sea positivo, vamos a estar teniendo diferentes entrevistas.
+No solamente con los gerentes, sino también en algún momento empezaremos a entrevistar a, por ejemplo, ingenieros del soporte, o desarrolladores, o analistas de Finanzas.
+
+Queremos hablar con gente de diferentes líneas, digamos, algunos nombres que les puedo contar.
+Juan Zeo, es el  gerente general de PSA, y van a tener una entrevista la semana que viene.
+
+Juan Zeo está interesado en el sistema, le van a preguntar obviamente más a el.
+Creo que tiene una muy buena visión de los de ese futuro, él fue el primero que se ocurrió hacer el IRP, CRM.
+Así que bueno, es el que va a poner la plata también.
+Y un poco al quien tenemos que convencer para que el que la llama de este proyecto sigua viva.
+Porque si en algún momento el piensa que no estamos agregando valor, lo va a apagar al proyecto.
+
+Tenemos a Fernando Soluzzia, también un interesado clave, Soluzzia es el gerente del área de proyectos, el área de soporte,
+el área de implementaciones y el área de infraestructura, que son cuatro gerencias tan importantes.
+Todo lo que tiene que ver con el desarrollo del proyecto armado de nuevas versiones del proyecto, producto, todo tiene que ver con Fernando Soluzzia.
+
+En segundo lugar Ricardo Ratio, alguien que está interesado, resumidamente, en los números y las finanzas,
+en la salud financiera de la empresa, él está interesado en poder traquear mejor el esfuerzo, por ejemplo, lo que se hace en los diferentes productos, no entiende la información que tienen, no le es tan obvio saber que productos ganan plata,
+que productos pierden plata y por eso va a estar muy interesado en la carga de horas.
+
+Juan Anvizzio, es el gerente de ventas.
+No diría que va a ser uno de los principales usuarios del sistema más allá de que sí, Juan tiene pensado empezar a traquear las oportunidades, en los perspectos un poco más formalmente, lo que Ricardo Ratio siempre le pide a Juan Anvizzio, es predictividad, a nivel de las ventas, entender más o menos, como viene el pipeline de ventas (el pipeline es, cómo es el flujo de ventas que viene hacia adelante) 
+A Ricardo le serviría saber, por ejemplo, -"va a estar entrando esta plata en mayo, esta plata en junio, esta plata en julio,
+que un poco viendo las oportunidades y donde está cada uno de esas oportunidades, bueno, Juan Anvizzio se supone que debería poder empezar a dar esa predictividad."-
+
+Para eso digamos, es como que Ricardo y Juan deberían estar colaborando juntos con una idea de ir llevando todas estas oportunidades a través del sistema.
+
+Tenemos agentantes de marketing, José Mercado, que el organiza diferentes campañas de publicidad para nuestros productos, el está muy interesado sobre todas las cosas, mejorar la predictividad de los relices, de los entregables de los nuevos productos, de lo que le pasa a él, justo que tenemos una descusión hoy, él quiere, por ejemplo, hacer una campaña publicitaria de la nueva versión de CRM, y justo estaba buscando anunciarla en un evento, y tiene miedo de que otra vez, ingeniería, y campaz digamos, le vuelva a fallar, y que anunciemos algo y gastemos 100 mil dólares en una campaña en publicidad que capaz terminé siendo innecesarias, y después terminamos entregándole la nueva versión del producto a unos meses.
+
+Así que José Mercado, más allá de que ha pasado un usuario tan directo del sistema, si está interesado en que este sistema triunfe para mejorar la predictividad de los proyectos y las entregadas de las nuevas versiones de los productos.
+
+Belén Sappe es una consultora especializada, que se va a estar conectando, nos va a estar ayudando, en ¿cuál es el consultor de contrató una consultora para tener una mirada un poco más independiente del trabajo que vamos a estar haciendo?
+Así que Belén se puede llegar a sumar, en función de eso, y va a depender también un poco de cómo vaya viendo Juan Zeo el avance que vamos haciendo semana, semana.
+
+Y por último, Leonardo Felici, Leonardo se va a estar conectando en un ratito y van a tener el kickoff del proyecto desde la parte más de Project Management, él es el que va a estar siguiendo más de cerca lo que es la ejecución, los entregables, los esperados, los va a estar ayudando a organizar.
+
+En cambio, yo tomo los brunes aquí, soy el dueño del producto, entre nada que yo tomo las decisiones funcionales, el producto, yo priorizo entre las diferentes modulos, y yo trabajo con ustedes en eso.
+
+Es importante que vaya a me entendiendo qué tipo de pregunta, hacerle a cada uno.
+A priori, las fechas las van a manejar con Leonardo, conmigo de nuevo, las preguntas que deberían hacer son todas las que tienen, más que nada, que ver con este producto, con cosas que tienen más que ver con el negocio.
+Cosas más de forma, fechas o entregables, es lo van a estar hablando con Leonardo.
+
+Vamos a meternos un poquito más de detalle en lo que queremos hacer, y vamos a hacer una pasada por cada uno de los múltiples modulos en los que vamos a estar trabajando.
+
+Proyectos: 
+Nosotros consideramos que el proyecto es como la unidad fundamental,para lo que es la creación de valor.
+Cada vez que nosotros arranquemos un nuevo producto, vamos una versión de un nuevo producto, eso lo vamos a marcar como un proyecto.
+Para eso vamos a querer definir un líder de proyecto, vamos a definir diferentes tareas.
+Nos encantaría hoy, es como que cada líder de proyecto hace un poco lo que quiere, y a nosotros lo que nos gustaría darle un poco de estructura, igual cuando hablen con Soluzzia les va a poder contar más, la idea es empezar a registrar formalmente las tareas, van a hacer un buen manejo de riesgos, una de las cosas que Soluzzia me comentaba, es que él está cansado de que las cosas le exploten cuando ya no tienen tiempo de actuar.
+
+Entonces él dice, bueno, si yo tuviese una buena forma de seguir el avance de los riesgos, quizas podría actuar antes,
+e impedir que el proyecto se demore, o que se me vaya a un talento clave, porque no actúe antes.
+
+Entonces una de las cosas que quiere Soluzzia es tener este modelo de proyectos que todos usen, que todos los líderes usen, que los desarrolladores usen, que registren las tareas, que los líderes de proyecto manejen los riesgos, con la idea de dar más información.
+Obviamente queremos que esto, que este modelo de proyectos tenga integraciones con modelos relacionados, que tenga reportes y que tenga alertas.
+
+No es que Soluzzia quiere estar todos los días entrando a la Landing Page, a la Home Page, del sistema de proyectos para ver qué alertas hay,  si un proyecto se retrasa, lo quieres saber en forma tranquilla, quiere tener un tipo de notificación, ya sé a email, u otra cosa, pero... quiere asegurarse de saber las cosas cuanto antes.
+
+Soporte:
+(que es otra de las áreas que maneja Soluzzia)
+Y para hacer algo sostenible en el tiempo, necesitamos que nuestros clientes estén contentos, no hay mucha magia a esto.
+Y hoy lo que se ve es que capaz los clientes se quejan, presentan quejas de varias formas, algunos por email, otros por teléfono, otros usan un sistema de tickets, y se hace muy difícil hacer seguimiento de estos tickets.
+
+Y también a veces no queda el todo claro cuál es la prioridad y la severidad de cada uno de estos problemas.
+
+Así que nos gustaría, nos encantaría, necesitamos empezar a manejar a los tickets de una forma uniforme.
+Queremos tener alertas de tickets sencillos, queremos que, por ejemplo, si un error tiene que haber con un problema,
+en un producto se pueda hacer una escalación ingeniería, y todo es el objetivo de prevenir en más clientes insatisfechos.
+Pero en un par de semanas se va a juntar con Augusto Aguanti, que es el líder del área, y les va a poder estar contando un poco cuáles son los desafíos que él está viendo hoy, en este área, cuáles son las cosas que les gustaría que vayamos trabajando y prioricemos.
+
+Recursos:
+Creemos que obviamente el activo más importante de una empresa es su gente.
+Entonces, incorporación y la retención del talento es una prioridad.
+En particular, hay muchas cosas que queremos ir hacia mi sistema, que tenemos eventualmente,
+digamos, todo lo que tiene que ver con proceso de entrevistas, los queremos llevar a través del sistema,
+lo que es la cádera de digamos, la situación de gente, a diferentes proyectos.
+
+Pero con lo primero que vamos a estar empezando a trabajar y es con lo que es la carga de horas,
+tenemos pensado hacer un sistema de carga de horas que es básicamente para entender exactamente cuánto tiempo esta cada persona haciendo cada cosa.
+Pero desde un punto de vista más de alto nivel, finanzas necesitas saber cuánta plata está gastando y ganando en cada proyecto.
+Y el costo principal de cada proyecto es la inversión en tiempo de la gente.
+Por eso, que queremos cargar horas para saber qué proyectos están siendo rentados,
+de qué proyectos no, y eventualmente decir que 
+-"y... de esto capaz deberíamos hacer una nueva versión."-
+
+Es difícil, sino tomar decisiones solamente basándonos en la intuición.
+Por eso, insistía tanto con la necesidad de tener datos para la toma de decisiones,
+y no solamente sensaciones.
+Bueno, les conté un poco de Anvizzio.
+La prioridad principal de Anvizzio tienen que ver con todo lo que es el manejo de oportunidades y lo que es la gestión de clientes.
+Básicamente, en estos sistemas de ventas, en estos CRMs, cuando hay una oportunidad o cuando se dice bueno,
+capaz este producto puede ser interesante para este cliente, lo que se registra es una oportunidad.
+Entonces, imagínamos que hay alguien que agarre en la consulta por un cliente como esa registra, la oportunidad.
+Y el sistema, la idea es que tengo muchas alertas, que vaya también ayudando.
+No sé, si por ejemplo, "-si no recibimos una actualización en una semana, el sistema nos puede ayudar a que con una gente de AI nos agarre y les escriba un email, y le escriba: ¿consideraste esto, te acordaste, había algo en lo que te podamos ayudar?."-
+La idea es hacer un seguimiento de todas las oportunidades que hay, que muchas veces son muchas, para hacer una mejor gestión de clientes.
+
+También, por ejemplo, podríamos ver que sí, si por alguna razón estamos teniendo problemas, que no está funcionando algo con un cliente, o no nos portamos muy bien a nivel de producto, de que práctica tuviera muchos bugs que le afectaron, entonces que capaz el sistema sugiera hacerle promociones para retenerlo, de nuevo, porque lo importante acá es la requerción de los clientes en el largo plazo.
+
+Finanzas:
+Finanzas es un módulo también crucial, es como la sangre que tiene la empresa para seguir viva, en el momento que se acaba la plata, las empresas mueren, entonces es importante que la sangre pueda seguir fluyendo. En general, cuando hablamos de la sangre de las empresas, hablamos del flujo de ingresos y egresos. ¿Cuenta plata se está gastando?, ¿cuenta plata entra?, ¿es la empresa rentable?, ¿no es rentable?, en general la rentabilidad de la empresa tiene ver con la rentabilidad de los proyectos. 
+Nuestro costo principal, bueno, hay una parte que tiene que tener con la infraestructura, pero para ser sinceros, el costo principal tiene que haber con la gente, entonces por eso es tan importante hacer la carga de horas.
+
+También la idea es que vayamos registrando en el sistema del costo de la gente, entonces sabemos más o menos cuantas horas, trabajo cada persona en cada proyecto, y que podemos ver con eso, una buena estimación del costo de un determinado proyecto,o producto, y después comparando un poco contra las ventas, podemos tomar decisiones un poco más precisas en dónde invertir. Una métrica que nos importa mucho y en general les importa a la mayoría de las empresas que cotizan en bolsa es la rentabilidad por cada dólar invertido, si tenemos un 1.3, quiere decir que por cada dólar que inverti, podemos tener un 3% de rentabilidad.
+A nosotros lo que también nos interesaría poder saber esa métrica, pero a nivel de proyecto.
+
+¿Cuánto está creciendo cada producto? Por qué en funcion del crecimiento quizas queremos invertir más. O por ejemplo lanzar un nueva versión, o incluso en caso de que no estemos viendo ningún tipo de crecimiento, empezar a pensar en cómo vamos a ir matándolo de a poco al producto, porque no queremos terminar manteniendo productos que no son rentables. 
+
+Marketing:
+Va a hacer llegar nuestra solución a quienes las necesitan y la necesitarán, que siempre hay todo un tema de generar una necesidad del otro lado. Queremos que nosotros ofrecemos obviamente diferentes productos, queremos gestionar diferentes tipos de campañas de publicidad, queremos apelar a lo que se conoce como Omnichannel marketing, que es apelar a diferentes canales para llegar a nuestros posibles clientes, redes sociales, TikTok, diferentes cosas, queremos tener integración con herramientas de COCM, básicamente GOOGLE  Analytics, cosas así, para poder asegurarnos de nuevo de que lo que estamos construyendo llega a quien debe llegar para ganar.
+
+Lo que queremos acá es ganar y vamos a empezar haciendo este sistema en forma local, o sea, la primera versión de todo esto, es primero para usarlo nosotros, pero después, la idea es salir a venderlo para que otros usen este sistema
+que nosotros vamos a estar haciendo.

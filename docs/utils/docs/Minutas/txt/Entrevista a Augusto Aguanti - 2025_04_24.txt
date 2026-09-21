@@ -1,0 +1,167 @@
+Bueno, yo sé que les dijeron que iban a tener una entrevista con Fernando Soluzzia, el es
+mi jefe, y el me pidió que viniera yo, porque él no pudo venir, mi nombre es Augusto Aguanti,
+yo trabajo en el área de soporte y bueno, entiendo que ustedes están haciendo lo que
+es el relevamiento de esta nueva herramienta que queremos construir para l empresa. No sé si tienen
+alguna pregunta en particular como para arrancar o si queréis que les cuente yo como es nuestro trabajo
+o que necesitamos de la herramienta como prefieren hacer.
+Miembro de Equipo de Desarrollo: 
+-"Por mi que arranque usted contando."-
+Augusto Aguanti: 
+-"Bueno, entonces arranquemos con que les cuente yo, como le decía mi nombre es Augusto
+Aguanti, trabajo en el área de soporte clientes y, bueno, esto depende de la gerencia de operaciones,
+es decir, de Fernando Soluzzia.
+Básicamente, nuestras misiones es atender los incidentes que tengan los clientes,
+cuando un cliente tiene un problema nos llama y nos dice cuál es el problema que
+tiene. Entonces, ahí lo primero que tenemos que entender y muchas veces es un problema para nosotros,
+que justamente es un problema que queremos solucionar con esta herramienta, es poder entender de qué software me está hablando el cliente, ¿sí? ¿Por qué? 
+Porque los diferentes clientes que tenemos tienen diferentes versiones de los productos que nosotros ofrecemos, no siemprelos tienen actualizados a la última versión. Y más allá de eso hay módulos en particular de ciertos productos que son customizables. Entonces, para aún mismo software, yo puedo tener la versión 3,
+4 o la 5, o puedo estar hablando de una solución que es la solución base, la definida de fábrica,
+o puede ser una solución que esté customizada para este cliente particular que me está llamado.
+Entonces, este dato para nosotros es fundamental. Porque lo que nos va a decir es cuál es el
+entorno de pruebas que tenemos que tener o cuál es la situación que tenemos que reproducir,
+basandonos en qué tenemos que reproducir esa situación o buscar el posible problema.
+Entonces, eso sería básico para nosotros, ¿sí? Nos contacto un cliente, nos dice,
+-"sí... hablo de tal empresa, tengo un problema con el producto tal."- 
+Y a mí me dicen, el producto tal, por poner un ejemplo, PSA CRM, ¿sí? Ahora, de cuál me estás hablando? De la
+versión 4?, De la versión 5?, De la versión de modulo de telefonía customizada? O de
+modulo de telefonía estándar?, ¿sí? Muchas veces ellos no lo saben.
+El cliente no me sabe decir, si se trata de una versión customizada o de la versión base,
+es la que usan todos los días, no les interesa, sí, no es un dato que ellos tengan, pero nosotros como
+proveedores de ese software, sí, lo tenemos que saber, sí tenemos que saber que está usando mi
+cliente. 
+Entonces, ahí tenemos en primer, una primer solución que necesitamos de este nuevo software.
+Segundo tema importante, tiene que ver con la integración de este sistema con el resto de
+la empresa, hoy en día nosotros tenemos una tiquetera, open source, generica que nos sirve para
+tener los tickets identificados y esos tickets llevarlo de persona en persona, pero necesitamos
+mejor integración. Yo necesito que cuando llego a un cierto punto de análisis del problema,
+eso pueda transferírselo al área de desarrollo y que eso sea una tarea para el área de desarrollo
+para el equipo que desarrolla el producto y que se integra en sus sistemas, si se les integra en
+su flujo de trabajo, no tener que mantenerlo por afuera, consultándole en que está esa tarea o
+cómo viene con este incidente, yo quiero ver mi incidente y ver que están haciendo ellos en
+esa tarea.
+Por supuesto, los incidentes tenemos que poder categorizarlos, sí, de acuerdo a su prioridad,
+su severidad, tenemos para muy con muy clientes también tenemos acuerdos de nivel de servicio,
+sí que este es fundamental porque cuando no cumplimos con un acuerdo de nivel de servicio, en
+muchos casos tenemos multas, entonces tenemos que fundamentalmente poder saber, saber desde un
+primer momento, cuál es el acuerdo de nivel de servicio con eso usual, entonces si me están
+levantando un incidente desprioritario, tengo que saber de cuánto tiempo dispongo para solucionarlo, 
+y ese tiempo lo tiene que tener el sistema, lo tiene que estar mostrando todo el
+tiempo el sistema, si cuánto tiempo me queda para solucionar ese incidente, 
+
+Bueno, por supuesto, es importante también tener la historia del tíker, que es hoy en día con
+la herramienta que tenemos está... es algo básico, les cuento.
+Una persona toma el tíquete, toma el problema, registra de que se trata y tal vez en el momento
+no lo puede resolver, muchas veces tenemos una base de conocimiento en la cual nuestros analistas de
+nivel 1 tienen como para investigar a ver qué puede estar pasando, ofrecerle acciones al cliente de
+cómo solucionar el inconveniente o cómo toman algún caminar alternativo y en base a eso tal vez no
+lo puede funcionar y tiene que pasarlo a otro nivel de su porte, si ese es el caso, ese tíquete pasa a
+otro equipo de trabajo, a otra persona y en base a eso, llendo de un lado al otro, por supuesto
+siempre registrando el tiempo y siempre registrando la historia de cómo fue esa transición, ejemplo:
+-"nombre, fulano de tal, toma el tíquete a tal hora, se registró todo esto, a tal otra hora se pasó el
+tíquete al equipo tal, el equipo tal se le asignó el tíquete a tal persona"-
+Porque?
+Porque eso después no se nos permite entender los tiempos, entender dónde estamos, necesitando
+más gente tal vez, o necesitando algún otro nivel de alarma o de registro, o para asignar los tíquete,
+digamos, de alguna forma nos sirva a todo ese traqueo del tiempo para optimizar el servicio.
+Creo, ahora no se me está ocurriendo mucho más, eso son los problemas más importantes que tenemos,
+no sé si tiene alguna pregunta de esto que dice algo que haya que aclarar, no se haya entendido?
+sí, Tomás....
+Miembro de Equipo de Desarrollo: 
+-"¿Cómo estás, Augusto? Tenía una pregunta de la parte de categorización de tíquete,
+sí, ¿qué tenían pensado algo más como grupos o como etiquetas? No se si se entiende la diferencia?"-
+Augusto Aguanti: 
+-"Sí, sí, sí, está bien, no, a ver, básicamente,
+correspondía en las dos, ¿no? Porque por un lado vos tenés grupos,
+cómo puedes agrupar los tíquets por cliente, cómo puedes agrupar los por producto,
+o podes agruparlos, o tal vez por módulo dentro del producto, y eso sería una forma, ¿no?
+Pero también vos podías etiquetarlo por tipo de problema,
+Bueno, no, no se me ocurrió ahora el tema de tíquetas, no sería la forma más utilizada,
+probablemente sea la mas utilizada. Sí, el tema de los grupos,
+sí agruparlo por cliente, por módulo, por software, eso sí, y sobre todo, por supuesto,
+siempre tomando en cuenta las prioridades, la prioridad que solo nos va a arrojense al
+tíquete, siempre estar ordenado por ese criterio, ¿no? O sea, lo más importante, lo que más
+quema primero."-
+Miembro de Equipo de Desarrollo: 
+-"Y esa información de que tan importante es?, la setea cada persona que
+toma el tíquete o..."-
+Augusto Aguanti: 
+-"Se va definiendo a lo largo, se va definiendo a lo largo de la vida del tíquete,
+o sea, que llame el cliente y el cliente te va a decir de su gente, no es entonces solo
+ya, siempre, eso, el cliente no lo puede decidir. Sí, es importante que nosotros tengamos una
+idea en cuanto a una prioridad y severidad del tíquete, la severidad esta dada por el impacto
+económico, el impacto, la mayoría de veces es económico, que tiene el problema que están
+teniendo, o sea, si estamos hablando de que no está pudiendo, no sé, filtrar
+algún dato en una lista de 20 datos, sí, pongamos, por ejemplo, eso no es muy muy complicado,
+no es muy severo, exactamente, no, no es una severidad alta, eso. Ahora, si de repente me están
+diciendo que no pueden emitir facturas, es una severidad muy alta, sí, tiene un impacto económico
+directo, entonces eso sería severidad uno, así que bueno, eso es uno de los de las dimensiones,
+a la considerar, la otra dimensión es la de prioridad, también la de prioridad tiene que
+ver con varias factores, entre ellos el tiempo, sí, el tiempo que va pasando en la vida del tíquete,
+o sea, por una de las severidad nos va a indicar algo de eso y la prioridad va a tener que ver con
+el acuerdo de nivel de servicio que tenga el cliente, qué tipo de cliente sea, si tenemos
+un SDA, cuánto tiempo hace que está viato ese tíquete, son varios factores que no dicen,
+a esto hay que darle prioridad ya mismo, sí, básicamente ese es el concepto, si es un cliente
+importante, es una cuenta importante, está frenado, lo más alto que tenemos lo va a
+ser unrgente que tenemos, que el ya mismo es prioridad uno, severidad uno, de ahí para abajo,
+sí tenemos ahí, se empiezan a mezclar esas dos variables, un prioridad tres, severidad tres,
+sería lo más bajo, que va al final de la cola, lo vamos aprendiendo a ver que nos va a
+quedado tiempo, básicamente, ok? Alguna otra traduda?"-
+Miembro de Equipo de Desarrollo: 
+-"Hoy al inicio de la reunión había comentado
+que los diferentes clientes podían tener versiones distintas del software y a su vez
+podían tener módulos custom o no... Los clientes, por sí mismos, son capaces
+de actualizar la versión de su software? o hay todo un proceso en el que cliente levanta
+un requerimiento, la analiza alguien de PSA y lo llevan por el lado del PSA, sea las actualizaciones
+de los módulos o actualizaciones del sistema o módulos custom"-
+Augusto Aguanti: 
+-"Eso pasa siempre por PSA, o sea, somos nosotros los que les administramos ese software, más
+que sea un software de ellos, en su propia infraestructura y demás, nosotros somos
+los que le instalamos una versión nueva, instalamos una customización, ya seguramente
+van a hablar con Cuchina, con Gustavo Cuchina, que es el jefe de implementaciones, que
+el justamente es el responsable de hacer ese tipo de cosas, hay un cliente que tiene
+la versión 3, pasa de la versión 4, bueno, él hace esa implementación, seguiremos, manteniendo
+en los datos, manteniendo los usuarios perfiles, un montón de parámetros que tiene
+configuradores del sistema, pasa de una versión a otra, o sea, no es que se instale un software
+y ya está, exacto, el proceso de migración que lo controlamos desde acá, lo mismo cuando
+hay una customización, si hay una customización, hay un módulo que se va a comportar distinto
+al que viene de vamos de fábrica, también es Cuchina, el equipo de Cuchina, que tiene
+que intervenir para configurar ese módulo el cliente"-
+Miembro de Equipo de Desarrollo: 
+-"Todo este proceso se lleva a través de la misma tiquera de los incidentes?"-
+Augusto Aguanti: 
+-"No, la tiqueta de los incidentes es incidentes, el equipo de Cuchina se maneja por proyectos, entiendo que tanto el equipo de desarrollo, como el equipo de implementaciones van a usar más la visión desde el punto de vista de
+los proyectos y las tareas, y no tanto la de tiquets de soporte como vamos a usar
+los nosotros. 
+Sí Mauricio..."-
+Miembro de Equipo de Desarrollo: 
+-"Entiendo que hay varios grupos bajo su mando de operaciones y quería saber
+en el tema de tiquetín quienes son, tal vez, los encargados de abrir/cerrar un tiquetín, que tienen
+terminado trabajando con eso,al final del día, es el tipo de cuestiones?"-
+Augusto Aguanti: 
+-"A ver, básicamente los representantes que tenemos acá en el callcenter son los que
+atienden esos tiquets, por el momento lo mantenemos de esa forma, tiene que ser alguien de PC,
+es un sistema interno, el de tiquetín, no puede, el cliente abrir un tiquet, por un
+tema de control nuestro, para que no nos inunden de tiquets, y en base a eso justamente hay diferentes
+roles, pero por un lado está la persona que toma el tiquet, que es lo que registra que esta pasando
+y guía el cliente en los primeros pasos, y después a ese tiquet hay otro equipo de trabajo
+que también le da seguimiento, a los tiquets abiertos, hay tiquets que tal vez llevan días,
+entonces a esos tiquets hay que darse seguimiento a veces involucrando la misma persona que
+lo abrió, sí, involucrando al mismo representante, justamente porque no hubo que
+pueda llegar a tener de ese desincidente, y a veces con asignados el a otro nivel de
+soporte, sí, básicamente nos manejamos con niveles de soporte, sí, el primer nivel
+de soporte es la persona que tiene el teléfono y guía al cliente en los primeros pasos,
+y esa persona no lo puede solucionar, pasa un segundo nivel de soporte, en el cual tenemos
+algún analista más experimentado, que puede conocer algún detalle más del producto, y después
+llegado el caso, nos vamos a un nivel de soporte 3, que suele ser los mismos desarrolladores
+del producto, los mismos analistas de negocio que define el producto, que nos pueden guiar
+desde un conocimiento más profundo, que tiene desde la cocina del producto, a ver que
+es lo que está pasando, y no tanto desde un nivel más de usuario que es lo que tenemos
+en los primeros niveles de soporte, sí, no sé si se os responde la pregunta?"-
+
+Bueno, vamos a ir entonces, yo lo que surgieron entonces es, a ver, me voy a ver mi agenda,
+yo tengo una reunión cita, bien, si les parece podemos dejar acá, esta reunión, si no hay duda,
+por supuesto, si llega a ver dudas de todas formas, podemos llegar a coordinar otra reunión,
+o pueden comunicarse o aclarar las dudas a través del Bruneleschi, que tiene el conocimiento más
+completo del producto, aunque definimos ya unas cuantas cosas, la visión, las largos con él, así bueno,
+pues qué cosas me contestan a través del, ok, bueno, los dejo entonces y veinte, tengo entendido
+que arranca otra reunión de este tipo, así que nos volvemos a encontrar y veinte, hasta luego,

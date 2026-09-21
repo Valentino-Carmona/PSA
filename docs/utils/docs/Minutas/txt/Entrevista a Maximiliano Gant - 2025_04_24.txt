@@ -1,0 +1,231 @@
+Bueno, me presento mi nombre es Maximilian Ogan, yo trabajo en la gerencia de
+operaciones de Fernando Soluzzia y bueno me pidió el que les escuente que es lo
+que estamos esperando, que les cuente por un lado como trabajamos y que es lo que estamos
+necesitando de este software nuevo que que vamos a construir, ¿no? Como seguramente ya les contó
+el product owner, la idea de este nuevo producto es que tengamos un módulo de
+para un módulo de soporte por un lado para parte de tickets y también un módulo de proyectos.
+En el módulo de proyectos es donde entramos nosotros tanto de nuestra área de proyectos
+de desarrollo como el área de implementaciones, ambas manejamos las cosas como si
+fuese en proyectos, si las identificamos a cada iniciativa como si fuesen proyectos. En este proyecto
+tenemos tareas y fundamentalmente lo que tenemos es requerimientos, nosotros necesitamos
+registrar que nos están pidiendo, básicamente es que nos están pidiendo y en base eso que nos
+piden nosotros hacemos el proyecto, si le identificamos qué tareas tenemos que ejecutar para cumplir
+con esa requerimiento. La idea con esto, a mí me gustaría que este producto sea un poco más
+visual desde el punto de vista de que se vea un tablero de proyectos, si tengamos un tablero de
+proyectos donde podamos entender en qué etapa de desarrollo está, básicamente los proyectos los
+podemos dividir en tres faces, en inicio, en desarrollo y en transición, en inicio esto a la parte de
+análisis y diseño, desarrollo, ahora con poco también de diseño, vamos más avanzado y todo
+lo que es la codificación, las pruebas y demás y la transición ya tiene que ver con la
+ultima etapa donde se la instalamos al cliente o hacemos una integración de versiones. Los tipos
+del proyecto que manejamos nosotros justamente ahí le estaban dando un dato, ¿no? al cliente o versión.
+Nosotros en este área lo que estamos manejando son tantos proyectos de customizaciones,
+cómo proyectos de funcionalidades nuevas o añadidas para las nuevas versiones del producto.
+En este momento tenemos en desarrollo la nueva versión del CRM, que le estamos haciendo un
+refactor de un par de módulos, estamos incorporando en un módulo nuevo, tenemos pequeño cambio
+de tecnología, por temas de seguridad, cambiamos la versión del protocolo de transición,
+todo eso hace que eso se maneje de una forma particular, son todas las tareas referidas a la nueva
+versión del CRM, pero por otro lado también tenemos un cliente que tiene el CRM, la versión
+actual de CRM y los pidió una customización, que básicamente la customización nos hizo hacer un
+módulo entero pata para arriba, totalmente distinto el que estamos manejando, estamos acostumbrados a
+manejar, entonces bueno, eso es un desarrollo aparte, esa customización es un desarrollo aparte,
+y entonces eso para nosotros es un proyecto donde justamente necesitamos registrar ese proyecto para
+qué cliente es, para qué módulo es, qué cuáles son los requerimientos y qué nos pide que haga como
+quiere que sean las cosas, y en base a eso nosotros tenemos las tareas, esas tareas se van
+asignando a los integrantes del equipo, en esas tareas los integrantes del equipo de
+cargan horas, porque necesitamos registrar en definitiva cuál fue el costo, porque en general
+los proyectos que tienen que ver con customizaciones, rara vez tienen un desarrollo "llave en mano",
+tratamos de evitarlo a toda costa, en la mayoria de los casos, son proyectos
+"time and material", que se le cobran el cliente, es parte de la instalación o de la
+customización que se le haya vendido al cliente, entonces necesitamos registrar eso ese tiempo,
+todos los tiempos, los tiempos de analisis de diseño de desarrollo todo el tiempo que se le haya
+puesto a ese proyecto para poder trasladarle ese costo al cliente, justamente no es un costo,
+le vendemos las horas  como si fueran de consultoría, con lo cual tenemos una ganancia ahí, no, es mayor
+al costo, pero por otro lado, sí, cuando estamos hablando de proyectos de desarrollo interno,
+sí, esto que les contaba la nueva versión del CRM, también necesitamos saber cuál fue el costo
+de este nuevo producto, un tema de control interno y también de previsación y de análisis de las
+de las funcionalidades que vamos a tener, sí, tenemos una serie importante de compromisos con
+clientes y también a nivel comercial, de repente tenemos muestras en las que participamos o también
+con la competencia, entonces necesitamos sacar el producto con cierto tiempo, y eso nos obliga a
+priorizar las funcionalidades y muchas veces la priorización de las funcionalidades se ve impactada
+por el costo que tenga una funcionalidad, una funcionalidad puede ser muy atractiva para el
+cliente, pero muy costoso para nosotros, entonces a veces son las primeras que quedan afuera de la
+versión, o al contrario, muchas veces las más costosas son con las que se arranca una nueva versión,
+porque sabemos que van a llevar bastante tiempo a desarrollarla, pero que es tal vez el diferencial de
+nuestra versión con respecto a lo que nos ofrece la competencia, entonces bueno, ese es el panorama,
+no sé si hay alguna duda con respecto a lo que les estuve contando,
+a lo de un tema que quieran ver,
+ok mientras me voy acordando un par de cosas que también está bueno aclarles,
+como le dije, cada una de estas cosas que manejamos son proyectos, y como proyecto tenemos un líder
+del proyecto o un proyect manager en algunos casos, de acuerdo también la dimensión, que lo que hace
+justamente es el seguimiento del proyecto, para eso la resulta muy útil como les decía, esta visión,
+esta presentación visual de los proyectos, de acuerdo a su etapa en la etapa en la que están,
+y de la misma forma, una vez que nos metemos dentro del proyecto, también tenía bueno tener
+justamente alguna forma de representación visual de las tareas que forman parte de este proyecto,
+tal vez un canvs donde tengamos las tareas no iniciadas, las iniciadas y las finalizadas,
+no gustaría también que se pueda customizar eso, que las columnas la vayan
+a definiendo el equipo, porque como le digo, son diferentes equipos, no es lo mismo el equipo que
+desarrolla customizaciones, que desarrolla las funcionarías nuevas, si bien son proyectos
+ambos proyectos manejamos dentro de la misma área, hay equipos de trabajo distintas,
+entonces me gustaría que esas tareas que inicialmente, como le digo, pueden ser no iniciadas,
+iniciadas y terminadas, tal vez dar la posibilidad de que eso se
+se customice, no sé si tal vez a nivel proyecto, tal vez a nivel herramienta,
+a por decir que también lo tenemos que pensar esto para venderse a otros clientes, entonces
+una cosa es la de una, un tema es cómo trabajamos nosotros internacionalmente en PSA y otra cosa
+son las prácticas de industria, del resto de los clientes, yo sé que muchos de ellos trabajan
+con metodología ágiles, pero también sé que algunos siguen manteniendo un ciclo de desarrollo
+cascada, entonces tal vez tener la posibilidad de hacer un desarrollo cascada con una planificación
+más tradicional con tareas predecesoras y tareas sucesoras podría estar bien, si estamos
+hablando de ágilas, las tareas son independientes y se van tomando sin ningún tipo de relación
+fuerte entre ellas y otro tema sí, muy importante, me estoy olvidando, muy importante, es importante
+que los proyectos que a los proyectos podamos asociarles sus riesgos, que tengamos identificado
+los riesgos del proyecto, que puede impactar en que el proyecto se cumpla, ya sea a nivel tiempo, a nivel
+costo o a nivel funcionalidades, si a nivel scope del proyecto, si esas tres dimensiones tienen
+que estar asociadas a diferentes riesgos, yo quiero saber para cada proyecto que tan factible
+es que lleguemos a termino o si tengo riesgos en el camino que tengo que atender,
+ante cada uno de estos riesgos, como siempre un riesgo tiene asociado un plan de mitigación,
+es que puedo hacer para que eso no ocurra, eso es el plan de mitigación y eso va a tener un
+responsable y también tenemos un plan de contingencia, eso que significa que pasa si el riesgo
+ocurre, ¿qué vamos a hacer? ¿Cómo? Justamente es planificar qué va a pasar si ese riesgo se materializa,
+entonces de repente un riesgo muy común que tenemos es que alguna persona con un conocimiento
+muy alto de algún tema específico de la herramienta se vaya a la empresa, entonces un plan de mitigación
+puede tener que ver con hablar con recursos humanos para asegurarnos que esta persona este conforme
+con su sueldo, con el trabajo que hace, con las tareas que este desarrollando, etcétera,
+y un plan de contingencia puede tener que ver con por ejemplo traer de otro proyecto a una persona
+con conocimientos similares, o contratar a alguien de afuera, todo esto es necesario en los proyectos
+ir previéndolo porque no nos puede tomar por su empresa este tipo de cosas, entonces es
+importante para poder llevar los proyectos a buen puerto, poder anticiparse a este tipo de
+situaciones, por supuesto la idea de que estos riesgos en cada uno de estos proyectos los tengamos
+ordenado por su impacto, la probabilidad de ocurrecia y el impacto que tenga este riesgo,
+no sé si quedo claro ese tema hay alguna duda con respecto a eso...
+Miembro del Equipo de Desarrollo:
+-"Estos riesgos se cargan todos a mano y lo analiza un integrante del equipo y se ocupa de cargarlos?"-
+Maximilian Ogan:
+-"Sí, la idea justamente es que el project manager sea el responsable de generar estos riesgos,
+general riesgo, general plan de contingencia, asignar el responsable, evaluar el impacto y la probabilidad
+de ocurrecia y justamente estos riesgos los podemos revisar en nuestras reuniones
+periodicas de la revisión de proyectos, normalmente con el equipo tenemos reuniones donde justamente
+revisamos en el estatus de los proyectos y de acuerdo de el estatus del proyecto a veces se presentan
+estos riesgos, se analiza estos riesgos, tenemos reuniones de trabajo donde elaboramos o revisamos
+estos planes de plan de mitigación de contingencia, a veces no es sencillo, tenemos riesgos con una
+probabilidad alta de ocurrecia y tenemos que estar atentos y tener las cosas preparadas para atacar
+ese problema con no ocurre."-
+Miembro del Equipo de Desarrollo:
+-"Bueno, aprovechamos de que nombro eso de proyectos que tienen probabilidad alta de ocurrecia de riesgo,
+hay alguna forma de categorizarlos?"-
+Maximilian Ogan:
+-"No, o sea, justamente por un lado tenemos el indicador de la probabilidad de ocurrecia y por
+un otro lado tenemos el impacto, hace es una matriz de impacto y probabilidad de ocurrecia y
+entre esas vas marcando de la misma forma que hacemos con los incidentes, prioridad uno severidad uno, son las dos dimensiones, si hay algo que tenga mucho impacto y mucha probabilidad,
+es el que más tenemos que tener claro el plan de mitigación, el plan de contingencia, mas
+el plan de contingencia que el de mitigación y los vamos atacando de acuerdo a ese, a ese indicador, sí, de repente un riesgo que podemos llegar a tener es que se nos corte la luz en la oficina durante el día
+completo, bueno, cuál es el plan de contingencia, cuál es la probabilidad de ocurrecia y la
+probabilidad de ocurrecia es muy baja porque ya tenemos un plan de contingencia que tenemos
+generador, sí, entonces es más un plan de mitigación, más que de contingencia, el
+generador se se prene automáticamente, pero ya tenemos el riesgo controlable y la probabilidad
+entonces baja por tener el generador, pero el generador puede fallar, entonces ahí seguimos
+teniendo un plan de contingencia en respecto a eso, de esa forma lo vamos a analizando,
+si estamos hablando de algo que tenga muy baja probabilidad, seguramente la reunión no nos va
+a dar en el tiempo para llegar a ese riesgo y tampoco aguantar la pena analizarlo,
+sí, es Facundo"-
+Miembro del Equipo de Desarrollo:
+-"Buenas noches, y hablando de esto, los propios planes de mitigación y
+contingencia tienen a su vez riesgos asociados, o sea que puedan fallar esos planes, tengan
+otros planes de soporte?"-
+Maximilian Ogan:
+-"No, solemos tener ese nivel de anidamiento.
+si podría pasar, pero no lo manejamos como algo, como algo que te digo, anidado,
+si, en tal caso serían dos riesgos independientes y uno dependiente del otro, entonces uno se dispara a raíz del otro, pero no hay ninguna dependencia, son independientes."-
+
+Quedó claro el tema de las horas, ¿verdad? O sea, el traqueo de horas se hace contra las tareas
+del proyecto, ¿sí? No cualquiera puede cargar las personas que están trabajando en las tareas y eso
+nos termina haciendo que el total de las horas que se subieron en el total de las tareas del
+proyecto va a ser costo el proyecto, ¿sí? Tenemos que tener también mecanismos para evitar que
+se carguen horas donde le corresponden, ¿sí? Una tarea puede estar, si una tarea, por ejemplo,
+está cerrada, si está terminada, no debería admitir que se le cargará horas, ¿sí? Lo mismi que
+si no inició, si si no inició, no hay posibilidad de cargarle horas, y más me falta más respecto a eso.
+Creo que es nada más. ¿Alguna otra duda? ¿Alguna otra cosa que les pueda aclarar?
+Si entonces está claro, a ver, una cosa que no me preguntaron, a ver por obvia, pero a ver, no
+sea obvio, los proyectos está bueno que tengan un identificador, que muchas veces los nombres van
+mutando, entonces un proyecto puede tener, tiene un identificador, tiene un nombre, ¿sí? Nombres del
+proyecto. Les digo que el proyecto muchas veces va mutando porque arrancamos con que el proyecto se
+llama "mejora de seguridad" y termina llamándose a implementación "TPLS 5.0", ¿sí? Entonces, el nombre
+proyecto es importante, más importante que el nombre es la descripción del proyecto, sí, que cualquier
+persona que entra en herramienta y abre el proyecto, puede entender sobre qué estamos trabajando,
+el proyecto puede tener un cliente asociado o no, puede tener un producto asociado o no,
+y por supuesto va a tener tareas como les dije antes, iniciadas, iniciadas terminadas, o más
+estados, el proyecto tiene, al de alguna forma, una fecha de inicio y una fecha de fin,
+sea que estamos trabajando con una metodología encascada o una metodología ágil, al menos,
+tenemos que saber si es una metodología ágil, cuáles son los esprints y cuáles la fecha de
+el último esprint, el que pensamos nosotros que es el último esprints, al menos, y que más
+tiene que decir a los riesgos asociados, un equipo de trabajo, un responsable de ese proyecto,
+llamamosle project manager o, bueno, es algo de otro nombre que le acabamos de poner,
+por supuesto, en todo momento tendremos que poder ver para el proyecto cuántas
+para el proyecto y tal vez para las tareas también, cuáles de estimación de esa tarea,
+en cuanto se estimó esa tarea y cuantas horas lleva cargadas.
+La sumatoria de las estimaciones de las tareas del proyecto me da la estimación total del proyecto
+y la sumatoria de las horas reales cargadas, mas toda las tareas del proyecto me da el total de horas
+cargadas del proyecto, esos dos datos son importantes, porque me van dando también
+un idea del nivel de avance del proyecto, un proyecto que tiene 10 mil horas estimadas y vamos por
+la 250 falta un monton, ¿ok?
+
+Miembro del Equipo de Desarrollo:
+-"Entonces, por lo que entiendo, las tareas pueden integrarse a medida que el proyecto está en desarrollo
+y por lo tanto expandirse la estimación del tiempo total del proyecto."-
+Maximilian Ogan:
+-"Sí"-
+Miembro del Equipo de Desarrollo:
+-"Se podria modificar las horas de la tarea en el ejercicio y que tomara mas tiempo al final o si se estima
+que le va a tomar más tiempo."- 
+Maximilian Ogan:
+-"A ver, sí es muy buena pregunta, creo que tendremos que tener un
+mecanismo como para poder registrar eso. O sea, por un lado, se hace una estimación, yo digo,
+bueno, esto va a llevar una semana. Entonces, ahí tenemos una estimación de 40 horas hombres,
+esa estimación de 40 horas hombres es lo que yo estime. Ahora, tal vez, llegado los jueves,
+me doy cuenta que me faltan dos días más. Entonces, ya no son 40 horas. Ya digo que todavía me faltan
+10 horas más, pero ya insumí 35. Entonces, ahí tenemos que tener, tal vez, tres conceptos,
+uno, cuál es la estimación inicial, uno, otro que sea cuánto me falta para terminar la tarea
+y otro que sea cuánto se gastó en esa tarea al momento. Si esto es el principio de la tarea,
+lo que me falta va a hacer lo mismo que la estimación. Si estoy en la mitad de la tarea,
+lo que cargue más lo que me falta, si no hubo desvíos, debería hacerlo mismo que la estimación.
+Y si hubo desvíos, va a ser un número mayor de la estimación.
+Ok, eso está bueno traquearlo porque, de nuevo, las sumatorias de esos tres valores en las tareas,
+me va a dar como estoy con respecto al proyecto. Si tengo tareas que, tal vez, me sobro tiempo.
+Entonces, tengo tareas que dijimos que van a hacerlos en 10 y lo hicimos en 3. Entonces,
+eso es tiempo de menos que necesito el proyecto. Lo vas común, terminas haciendo todo el puesto.
+Tarea que digo que va a tardar a 3 días y también tardando a 4. Entonces, eso es un desvío en el
+proyecto. Y necesito ir viendo lo que voy a tener en ese desvío."-
+Miembro del Equipo de Desarrollo:
+-"Yo tenía una pregunta acerca de los costos. Entiendo que las horas las
+cargue a cada... o el proyecto manager o los mismos trabajadores que trabajan en esas horas,
+pero el costo de cada hora ombre es una para todas las personas. Tienen una diferencia de
+tener rango."- 
+Maximilian Ogan:
+-"No, hay una diferencia dependiendo del rango.
+Hasta, tal vez, dependiendo de la persona. No sé, eso lo maneja finanzas.
+Tal vez es una buena pregunta para hacer las finanzas como lo va a querer manejar.
+Pero sí, es algo que no manejamos nosotros. Es algo que, tal vez, está bueno que veamos para
+saber en cuanto a costo, cuánto nos está costando un proyecto, pero no es algo que manejemos desde
+proyectos. Tuve nuestro objetivo es llegar con el proyecto a términos, ¿sí? En tiempo, en
+escope. Y en costo, sí, pero ese costo lo definimos.
+Yo no manejo como project manager, cuánto cobra mi desarrollador.
+Sí, eso lo maneja las finanzas. Entonces ahí tenemos que valer las información que nos traigan
+ellos."-
+Miembro del Equipo de Desarrollo:
+-"Entiendo entonces que lo mismo va con cursos o capacitaciones que tenemos que hacer que,
+cuando hablamos con Juan Zeo, nos contó que esos costos también van a estar asociados."-
+Maximilian Ogan:
+-"Sí, por supuesto, los proyectos no solamente tienen horas hombre, también los proyectos pueden
+incorporar otro tipo de costos. Sí, y si de repente ahora estamos haciendo un proyecto que tenemos
+que estamos viendo como tener un servicio en la nube y, para eso, estamos contratando
+servidores de AWS. Entonces, la factura de AWS hoy en día está imputada a ese proyecto.
+Sí, en el día de mañana que hace un costo operativo va a pagar lo otro sector, pero hoy
+estamos pagando nosotros y es costo del proyecto. Entonces, es importante también,
+es justamente eso, tenía algún mecanismo para que a los proyectos podamos sumarle ese costo,
+esos, esos costos. Sí, si de repente, como les decía, se dispara este riesgo de que la persona
+que sabe mucho de un tema se va y tema de contratar una consultora, sí, para que me traiga alguna
+especialista en ese tema, eso va a ser un costo del proyecto. Sí, lo que me cobre la consultora.-"
+
+Bien, no tenemos mucho más espacio para preguntas,
+yo necesito irme a otra reunión. Me dijo, Cuchina que va a estar esperando en la siguiente
+reunión ahora las nueve, sí. Así que a las nueve se encuentran con cuchina que les vamos,
+les va a contar toda la parte de la problemática de implementaciones. OK?

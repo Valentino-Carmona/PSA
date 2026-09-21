@@ -1,0 +1,77 @@
+Hola, ¿qué tal? ¿Cómo le van? Muy buenas tardes.
+Bueno, gracias por sumarse y antes que nada, les pido mil disculpas por la poca anticipación
+con la que convoque está reunión, quería charlar cinco minutos con ustedes. 
+La verdad que estoy también en este momento, en el salón VIP de acá en el aeropuerto, que en seguida, en unos minutos tengo que abordar el vuelo, tengo que viajar a Colombia para seguir con nuestra expansión de negocios ahí, bueno, creo que ya estuvieron hablando con Tomás Bruneleschi, con Fernández, acerca de este nuevo proyecto que queremos
+encarar, simplemente les quería transmitir que tienen todo mi apoyo para hacerlo, nos gustaría
+ver algún MVP, como ya les hemos comentado, funcionando de acá, a 15 semanas, una
+cosa para el estilo, realmente para nosotros este es un proyecto sumamente importante,
+como ya saben, la compañía está en un proceso de expansión grande, como probablemente
+también ya sepan cada equipo de trabajo usa sus propias herramientas para hacer la
+gestión de los proyectos, para hacer la gestión de los tíquets, así que resolvimos unificar
+y definir una única herramienta, y como somos una empresa de desarrollo software, decidimos
+nosotros construirnos la herramientas de software que necesitamos.
+La herramienta que no debería servirnos solamente para nosotros, sino potencialmente para ofrecerle a nuestros clientes, ya
+le comenté al tanto el PO como PM, que pusimos a cargo, que les facilita
+todos ustedes, las reuniones con los diferentes sectores de PCA, van a entrevistar a mas project managers,
+van a entrevistar al gente financiero, al gerente de marketing, a todo lo que ustedes
+consideran haga falta, tenemos que definir una línea base de requisitos para poder avanzar
+con la construcción de este producto, es crucial para nosotros, porque necesitamos unificar la información
+de los proyectos, de los costos de cada proyecto, de los beneficios y no podemos seguir teniendo
+que invertir un esfuerzo tan grande en consolidar información de distintas fuentes, así que el
+desafío es poder unificar, poder tener una herramienta única para gestionar la operatoria
+del área de la gerencia de operaciones, básicamente, de todo lo que seria la gestión
+de los proyectos y el soporte.
+Si lo hacemos bien, la idea es que podamos vender este mismo producto a nuestros clientes, así que, bueno, les quería comentar esto y simplemente ponerme en la disposición de ustedes, yo no tengo los detalles técnicos, no tengo los detalles
+funcionales, no me quiero meter mucho en eso, prefiero que ustedes puedan explorar y puedan
+trabajar con los distintos stakeholders y definir en conjunto qué es lo que necesitamos, qué es lo
+que hace falta.
+Así que, bueno, tengo unos minutitos para preguntas, ya me están llamando,
+pero si alguno tiene alguna pregunta, simplemente abre el micrófono y formulera, no hay ningún problema.
+Compañero: tengo una pregunta. 
+CEO: Sí 
+Compañero: Queria preguntarte, ¿cuáles van a hacer los usuarios principales, tanto internos como externos, y qué tipos de tareas deberían realizar con el sistema?
+CEO: Bueno, ahora justo un poco lo que les decía recién, no tengo el detalle funcional de esto,
+siendo una aplicación que va a permitir gestionar proyectos y gestionar soporte,
+yo me imagino que los usuarios deberían ser todos los de la gerencia operaciones,
+por lo menos, los líderes del proyecto deberían poder seguramente planificar sus proyectos,
+los miembros de los equipos, entiendo que deberían poder cargar horas de trabajo a las actividades
+de los proyectos, supuestamente la gente financiera va a querer sacar algún tipo de
+de reporte para saber cuál es el avance de los proyectos desde el punto de vista de facturación,
+sacar algún ratio financiero, la gente de soporte va a tener una problemática un poco diferente,
+porque va a estar con temas de soporte, va a tener que recibir tíquets, escalarlo,
+priorizarlos, es lo que yo me imagino y lo que yo veo que están haciendo hoy con las
+herramientas; 
+en cuanto a usuarios externos, tampoco lo sé, hay una posibilidad de que en
+algún momento se charló, de que nuestros clientes puedan cargar directamente los tíquets
+ellos mismos, de algúna web, pero bueno, no sé, esto es cuestión de que lo charlen
+con el PO, que vallan viendo tambien que es lo que nos conviene.
+Despues, por supuesto, una situación completamente distinta, es si este mismo sistema nosotros
+los pedemos vender a nuestros clientes para que nuestros clientes lo usen para su operatoria,
+porque tenemos muchos clientes que también tienen sus propios proyectos, algunos tienen su propia
+mesa de servicios, entonces quizás quieran usar este producto, que nuestra idea es integrarlo
+con nuestra suite, con nuestro ERP, con nuestros RM, están todas las posibilidads abiertas, yo creo que acá va a depender mucho de la capacidad de ustedes para definir
+y negociar que es lo que este producto va a hacer y que es lo que se dejaría para
+otra vercion o para más adelante, saviendo que hay otros productos en el mercado que hacen cosas
+parecidas, pero bueno, decidimos, tomamos esta decisión de hacer nuestro propio producto,
+¿no sé si contesté la pregunta? 
+Compañero: No, sí sí, que básicamente, dependiendo qué usuario
+haya va a tener diferentes funcionalidades, se va a manejar distinto.
+CEO: Exactamente, esa es un poco la, esa es un poco la idea, pero bueno, ahí hay que ir viendo durante el discovery,
+que es lo que se va armando, etcétera, por supuesto, ahí hay un tema que no hay que perder de vista, si bien, porque esto es un poco como nos pasa con nuestros propios clientes, nosotros, con nuestro sistema ERP, como ustedes ya saben
+nuestro ERP, nuestro CRP tienen ciertas funcionalidades, que son estándares
+del mercado, o sea todas las empresas facturas, más o menos igual, manejan sus clientes,
+más o menos de la misma forma, entonces, cada vez que vamos con nuestra solución estándar,
+siempre aparece algun cliente que quiera alguna customización, es una cosa en particular,
+porque ellos trabajan de manera diferente, entonces no quiero que pase lo mismo con este
+producto que vamos a construir, pues seguramente van a hablar con distintos actores dentro
+de, de PCA y cada uno va a tener su visión de, de, de qué cosas, de, de qué funcionalidades
+son críticas, y este, y cada uno les va a plantear una visión probablemente diferente
+de, de qué es lo que deberías hacer este sistema, con lo cual, si bien hay que escuchar
+a los usuarios internos de PCA, no hay que perder de vista que lo que queremos construir
+es un, un producto estándar, que pueda funcionar, digamos, en, en empresas que necesiten
+que gestionar proyectos, que tengan una mesa de ayuda, etcétera, ¿no sé contesté tu pregunta? 
+Compañero: sí sí, perfecto, muchas gracias.
+
+Bueno, tengo tiempo para una pregunta más... 
+Ok, bueno les deseo entonces éxitos a todos, me gustaría juntarme con ustedes cuando tengan definida, más o menos la, la visión de lo que se va a construir en este, en este MVP, que calculo será en 4 o 5 semanas, no lo sé, ya me informarán, y después, por supuesto, cuando esté funcionando la vercion inicial, vamos a volver... 
+Ok, así que bueno, gracias por el tiempo y nos estamos viendo.
