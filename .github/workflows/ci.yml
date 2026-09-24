@@ -36,6 +36,12 @@ jobs:
           SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop
           SPRING_FLYWAY_ENABLED: false
 
+      - name: Run Mutation Tests (PIT)
+        run: ./mvnw -B test-compile pitest:mutationCoverage
+        env:
+          SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop
+          SPRING_FLYWAY_ENABLED: false
+
       - name: Upload Jacoco Coverage Report
         uses: actions/upload-artifact@v4
         if: always()

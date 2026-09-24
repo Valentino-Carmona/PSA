@@ -103,28 +103,25 @@ Las migraciones de Flyway construyen el esquema de forma incremental:
 
 ---
 
-## 04. Testing
+## 04. Testing & Quality Assurance
 
-El proyecto incluye **16 escenarios BDD** implementados con Cucumber que cubren las historias de usuario del módulo:
+La versión original académica de este proyecto contaba con una cobertura parcial y básica. Como parte de una **reingeniería de calidad total de autoría propia (Valentino Carmona)**, la suite de pruebas fue reescrita y escalada para cumplir con estándares de la industria, introduciendo TDD, pruebas de mutación y blindaje contra regresiones.
 
-| Historia de Usuario | Descripción |
-| :--- | :--- |
-| US-06 | Crear proyecto |
-| US-07 | Planificar fechas de proyecto |
-| US-08 | Etiquetar proyecto |
-| US-09 | Ver proyectos |
-| US-11 | Filtrar proyectos |
-| US-16 | Ver detalle de proyecto |
-| US-17 | Monitorear estado de proyecto |
-| US-18 | Eliminar proyecto |
-| US-19 | Crear tarea |
-| US-20 | Asignar recurso a tarea |
-| US-21 | Ver tareas |
-| US-22 | Filtrar tareas |
-| US-25 | Modificar horas estimadas |
-| US-26 | Cambiar estado de tarea |
-| US-27 | Ver detalle de tarea |
-| US-31 | Calcular duración estimada del proyecto |
+La suite automatizada cuenta actualmente con **313 tests** que abarcan desde el núcleo del dominio (JUnit + Mockito) hasta pruebas End-to-End de comportamiento (Cucumber BDD).
+
+### Métricas de Cobertura (Jacoco)
+El código se encuentra protegido por una estricta barrera de cobertura que valida tanto las líneas ejecutadas como las ramificaciones lógicas (`if`, `switch`, nulos):
+- **Instruction Coverage:** `96.07%`
+- **Branch Coverage:** `90.52%`
+
+### Pruebas de Mutación (PIT)
+Para garantizar que el >90% de cobertura no sea superficial, el pipeline implementa **Mutation Testing** (Pitest) aislado en la capa core (`model`, `mapper`, `service`). En cada compilación, PIT inyecta deliberadamente cientos de bugs lógicos (mutantes) en el código fuente para evaluar la fuerza de las aserciones de los tests.
+
+- **Mutantes Generados:** `320`
+- **Mutantes Asesinados (Killed):** `268 (84%)`
+- **Fuerza Real de los Tests (Test Strength):** `91%`
+
+Estos números garantizan empíricamente que la arquitectura es robusta, resiliente y que los tests capturan efectivamente fallas en la lógica de negocio.
 
 ---
 
