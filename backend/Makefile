@@ -8,7 +8,7 @@ PROJECT_NAME := proyecto-api
 MAVEN := ./mvnw
 DOTENV := .env
 
-DOCKER_COMPOSE := docker compose
+DOCKER_COMPOSE := docker compose -f ../docker-compose.yml
 FLYWAY_ARGS := -Dflyway.url=jdbc:postgresql://$$(PGHOST)/$$(PGDATABASE)?sslmode=require -Dflyway.user=$$(PGUSER) -Dflyway.password=$$(PGPASSWORD)
 
 .PHONY: help dev clean install test check-env flyway-clean flyway-repair flyway-migrate flyway-info db-reset setup build up down restart rebuild
@@ -74,8 +74,8 @@ up: check-env
 
 # Ejecutar tests en Docker
 docker-test: check-env
-	$(DOCKER_COMPOSE) -f docker-compose.test.yml rm -fsv
-	$(DOCKER_COMPOSE) -f docker-compose.test.yml up --build --abort-on-container-exit
+	docker compose -f docker-compose.test.yml rm -fsv
+	docker compose -f docker-compose.test.yml up --build --abort-on-container-exit
 
 # Detener los servicios
 down:

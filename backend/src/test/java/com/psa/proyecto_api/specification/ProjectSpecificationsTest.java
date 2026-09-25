@@ -22,6 +22,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DataJpaTest
 @Import(ProjectSpecifications.class)
+@org.springframework.test.context.TestPropertySource(properties = {
+    "spring.flyway.enabled=false",
+    "spring.jpa.hibernate.ddl-auto=create-drop"
+})
 class ProjectSpecificationsTest {
     
     @Autowired

@@ -1,7 +1,7 @@
 services:
   proyecto-api:
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
     container_name: proyecto-api
     ports:
@@ -40,7 +40,7 @@ services:
     
     # Carga variables de entorno desde el archivo .env
     env_file:
-      - .env
+      - ./backend/.env
     
     # Configuración de Healthcheck adicional al Dockerfile
     healthcheck:
