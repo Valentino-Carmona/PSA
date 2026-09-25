@@ -2,7 +2,7 @@ package com.psa.proyecto_api.specification;
 
 import com.psa.proyecto_api.dto.request.ProjectFilterRequest;
 import com.psa.proyecto_api.model.Project;
-import com.psa.proyecto_api.model.ProjectTag;
+import com.psa.proyecto_api.model.Tag;
 import com.psa.proyecto_api.model.enums.ProjectStatus;
 import com.psa.proyecto_api.model.enums.ProjectType;
 
@@ -49,17 +49,12 @@ public class ProjectSpecifications {
         };
     }
 
-    /**
-     * Creates a specification to filter projects by tag
-     * @param tag The tag to filter by
-     * @return A specification that filters by the given tag, or returns all if tag is null
-     */
     public Specification<Project> hasTag(String tag) {
         return (root, query, criteriaBuilder) -> {
             if (tag == null) return null;
             
-            Join<Project, ProjectTag> tagJoin = root.join("projectTags");
-            return criteriaBuilder.equal(tagJoin.get("tagName"), tag.trim());
+            Join<Project, Tag> tagJoin = root.join("tags");
+            return criteriaBuilder.equal(tagJoin.get("name"), tag.toLowerCase().trim());
         };
     }
 }

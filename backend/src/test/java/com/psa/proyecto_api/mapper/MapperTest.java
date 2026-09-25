@@ -19,7 +19,7 @@ class MapperTest {
 
     @Test
     void testProjectMapperNulls() {
-        ProjectMapper mapper = new ProjectMapper();
+        ProjectMapper mapper = new ProjectMapper(org.mockito.Mockito.mock(com.psa.proyecto_api.repository.TagRepository.class), new TaskMapper(org.mockito.Mockito.mock(com.psa.proyecto_api.repository.TagRepository.class)));
         CreateProjectRequest req = new CreateProjectRequest();
         req.setName("Test");
         req.setClientId(1);
@@ -35,7 +35,7 @@ class MapperTest {
 
     @Test
     void testTaskMapperNulls() {
-        TaskMapper mapper = new TaskMapper();
+        TaskMapper mapper = new TaskMapper(org.mockito.Mockito.mock(com.psa.proyecto_api.repository.TagRepository.class));
         Project p = new Project("P", 1, ProjectType.DEVELOPMENT, ProjectBillingType.FIXED_PRICE, LocalDate.now());
         CreateTaskRequest req = new CreateTaskRequest();
         req.setName("Task");

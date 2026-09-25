@@ -8,12 +8,14 @@ import com.psa.proyecto_api.exception.ProjectNotFoundException;
 import com.psa.proyecto_api.exception.TaskNotFoundException;
 import com.psa.proyecto_api.mapper.TaskMapper;
 import com.psa.proyecto_api.model.Project;
+import com.psa.proyecto_api.model.Tag;
 import com.psa.proyecto_api.model.Task;
 import com.psa.proyecto_api.model.enums.ProjectBillingType;
 import com.psa.proyecto_api.model.enums.ProjectStatus;
 import com.psa.proyecto_api.model.enums.ProjectType;
 import com.psa.proyecto_api.model.enums.TaskStatus;
 import com.psa.proyecto_api.repository.ProjectRepository;
+import com.psa.proyecto_api.repository.TagRepository;
 import com.psa.proyecto_api.repository.TaskRepository;
 import com.psa.proyecto_api.service.impl.TaskServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,8 +36,14 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class TaskServiceImplTest {
 
-    @Mock private TaskRepository taskRepository;
-    @Mock private ProjectRepository projectRepository;
+    
+    @Mock
+    private TaskRepository taskRepository;
+    @Mock
+    private TagRepository tagRepository;
+
+    @Mock
+    private ProjectRepository projectRepository;
     @Mock private TaskMapper taskMapper;
 
     @InjectMocks
@@ -192,6 +200,7 @@ class TaskServiceImplTest {
         when(taskRepository.save(task)).thenReturn(task);
         when(taskMapper.toResponse(task)).thenReturn(taskResponse);
 
+        when(tagRepository.findByName(anyString())).thenReturn(java.util.Optional.empty());
         TaskResponse result = taskService.addTagToTask(1L, "urgent");
 
         assertNotNull(result);
@@ -207,7 +216,7 @@ class TaskServiceImplTest {
 
     @Test
     void removeTagFromTask_WhenExists_ReturnsUpdatedTask() {
-        task.addTag("urgent");
+        task.addTag(new Tag("urgent"));
         when(taskRepository.findById(1L)).thenReturn(Optional.of(task));
         when(taskRepository.save(task)).thenReturn(task);
         when(taskMapper.toResponse(task)).thenReturn(taskResponse);
@@ -226,11 +235,12 @@ class TaskServiceImplTest {
 
     @Test
     void updateTaskTag_WhenExists_ReturnsUpdatedTask() {
-        task.addTag("old");
+        task.addTag(new Tag("old"));
         when(taskRepository.findById(1L)).thenReturn(Optional.of(task));
         when(taskRepository.save(task)).thenReturn(task);
         when(taskMapper.toResponse(task)).thenReturn(taskResponse);
 
+        when(tagRepository.findByName(anyString())).thenReturn(java.util.Optional.empty());
         TaskResponse result = taskService.updateTaskTag(1L, "old", "new");
 
         assertNotNull(result);
@@ -245,7 +255,7 @@ class TaskServiceImplTest {
 
     @Test
     void getTaskTags_WhenExists_ReturnsTags() {
-        task.addTag("urgent");
+        task.addTag(new Tag("urgent"));
         when(taskRepository.findById(1L)).thenReturn(Optional.of(task));
 
         List<String> tags = taskService.getTaskTags(1L);

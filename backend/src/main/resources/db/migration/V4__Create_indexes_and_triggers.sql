@@ -19,6 +19,7 @@ CREATE INDEX idx_tasks_assigned_resource ON tasks(assigned_resource_id);
 -- ÍNDICES PARA TAGS
 -- ========================================
 CREATE INDEX idx_project_tags_project_id ON project_tags(project_id);
-CREATE INDEX idx_project_tags_name ON project_tags(tag_name);
+CREATE INDEX idx_project_tags_tag_id ON project_tags(tag_id);
 CREATE INDEX idx_task_tags_task_id ON task_tags(task_id);
-CREATE INDEX idx_task_tags_name ON task_tags(tag_name);
+CREATE INDEX idx_task_tags_tag_id ON task_tags(tag_id);
+CREATE INDEX idx_tags_name ON tags(name);

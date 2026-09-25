@@ -5,13 +5,21 @@ import com.psa.proyecto_api.dto.request.UpdateProjectRequest;
 import com.psa.proyecto_api.dto.response.ProjectResponse;
 import com.psa.proyecto_api.dto.response.ProjectSummaryResponse;
 import com.psa.proyecto_api.model.Project;
+import com.psa.proyecto_api.model.Tag;
+import com.psa.proyecto_api.repository.TagRepository;
 
 import java.util.List;
 
 import org.springframework.stereotype.Component;
+import lombok.RequiredArgsConstructor;
 
 @Component
+@RequiredArgsConstructor
 public class ProjectMapper {
+    
+    private final TagRepository tagRepository;
+    private final TaskMapper taskMapper;
+
     public Project toEntity(CreateProjectRequest request) {
         Project project = new Project(
                 request.getName(),
@@ -30,7 +38,11 @@ public class ProjectMapper {
         }
 
         if (request.getTagNames() != null) {
-            request.getTagNames().forEach(project::addTag);
+            request.getTagNames().forEach(tagName -> {
+                Tag tag = tagRepository.findByName(tagName.toLowerCase().trim())
+                        .orElseGet(() -> new Tag(tagName));
+                project.addTag(tag);
+            });
         }
         return project;
     }
@@ -52,7 +64,6 @@ public class ProjectMapper {
     }
 
     public ProjectResponse toResponse(Project project) {
-        TaskMapper taskMapper = new TaskMapper();
         return ProjectResponse.builder()
                 .id(project.getId())
                 .name(project.getName())

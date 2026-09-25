@@ -9,10 +9,12 @@ import com.psa.proyecto_api.exception.ProjectNotFoundException;
 import com.psa.proyecto_api.exception.TaskNotFoundException;
 import com.psa.proyecto_api.mapper.TaskMapper;
 import com.psa.proyecto_api.model.Task;
+import com.psa.proyecto_api.model.Tag;
 import com.psa.proyecto_api.model.enums.TaskStatus;
 import com.psa.proyecto_api.model.Project;
 import com.psa.proyecto_api.repository.TaskRepository;
 import com.psa.proyecto_api.repository.ProjectRepository;
+import com.psa.proyecto_api.repository.TagRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,7 @@ public class TaskServiceImpl implements TaskService {
 
     private final TaskRepository taskRepository;
     private final ProjectRepository projectRepository;
+    private final TagRepository tagRepository;
     private final TaskMapper taskMapper;
 
     // Task Methods
@@ -97,7 +100,11 @@ public class TaskServiceImpl implements TaskService {
     public TaskResponse addTagToTask(Long id, String tag) {
         Task task = taskRepository.findById(id)
                 .orElseThrow(() -> new TaskNotFoundException(id));
-        task.addTag(tag);
+                
+        Tag tagEntity = tagRepository.findByName(tag.toLowerCase().trim())
+                .orElseGet(() -> new Tag(tag));
+                
+        task.addTag(tagEntity);
         task = taskRepository.save(task);
         return taskMapper.toResponse(task);
     }
@@ -115,7 +122,13 @@ public class TaskServiceImpl implements TaskService {
     public TaskResponse updateTaskTag(Long id, String oldTag, String newTag) {
         Task task = taskRepository.findById(id)
                 .orElseThrow(() -> new TaskNotFoundException(id));
-        task.updateTaskTag(oldTag, newTag);
+                
+        task.removeTag(oldTag);
+        
+        Tag newTagEntity = tagRepository.findByName(newTag.toLowerCase().trim())
+                .orElseGet(() -> new Tag(newTag));
+                
+        task.addTag(newTagEntity);
         task = taskRepository.save(task);
         return taskMapper.toResponse(task);
     }

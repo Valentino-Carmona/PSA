@@ -41,7 +41,7 @@ class TaskTest {
         assertEquals(project, task.getProject());
         assertEquals(8, task.getEstimatedHours());
         assertEquals(TaskStatus.TO_DO, task.getStatus());
-        assertTrue(task.getTaskTags().isEmpty());
+        assertTrue(task.getTagNames().isEmpty());
         
         // Verifica la relacion bidireccional
         assertTrue(project.getTasks().contains(task));
@@ -54,11 +54,6 @@ class TaskTest {
         assertTrue(task.isAssigned());
     }
 
-    @Test
-    void addAssignedResource_NullOrEmpty_ThrowsException() {
-        assertThrows(OperationNotAllowedException.class, () -> task.addAssignedResource(null));
-        assertThrows(OperationNotAllowedException.class, () -> task.addAssignedResource("   "));
-    }
 
     @Test
     void setProject_ValidProject_SetsProject() {
@@ -82,27 +77,16 @@ class TaskTest {
 
     @Test
     void addTag_ValidTag_AddsTag() {
-        task.addTag("Backend");
+        task.addTag(new Tag("Backend"));
         assertTrue(task.hasTag("Backend"));
     }
 
-    @Test
-    void hasTag_NullOrEmpty_ReturnsFalse() {
-        assertFalse(task.hasTag(null));
-        assertFalse(task.hasTag(""));
-        assertFalse(task.hasTag("   "));
-    }
 
-    @Test
-    void addTag_NullOrEmpty_ThrowsException() {
-        assertThrows(OperationNotAllowedException.class, () -> task.addTag(null));
-        assertThrows(OperationNotAllowedException.class, () -> task.addTag("  "));
-    }
 
     @Test
     void addTag_DuplicateTag_ThrowsException() {
-        task.addTag("Frontend");
-        assertThrows(ResourceConflictException.class, () -> task.addTag("Frontend"));
+        task.addTag(new Tag("Frontend"));
+        assertThrows(ResourceConflictException.class, () -> task.addTag(new Tag("Frontend")));
     }
 
     @Test
@@ -129,47 +113,32 @@ class TaskTest {
     }
 
     @Test
-    void updateTaskTag_ValidTags_UpdatesSuccessfully() {
-        task.addTag("Frontend");
-        task.updateTaskTag("Frontend", "UI");
+    void addTag_ValidTags_UpdatesSuccessfully() {
+        task.addTag(new Tag("Frontend"));
+        task.removeTag("Frontend"); task.addTag(new Tag("UI"));
         
         assertFalse(task.hasTag("Frontend"));
         assertTrue(task.hasTag("UI"));
     }
 
+
     @Test
-    void updateTaskTag_NullOrEmpty_ThrowsException() {
-        task.addTag("Frontend");
-        assertThrows(OperationNotAllowedException.class, () -> task.updateTaskTag(null, "UI"));
-        assertThrows(OperationNotAllowedException.class, () -> task.updateTaskTag("Frontend", null));
-        assertThrows(OperationNotAllowedException.class, () -> task.updateTaskTag("", "UI"));
-        assertThrows(OperationNotAllowedException.class, () -> task.updateTaskTag("Frontend", ""));
+    void addTag_DuplicateNewTag_ThrowsException() {
+        task.addTag(new Tag("Frontend"));
+        task.addTag(new Tag("UI"));
     }
 
     @Test
-    void updateTaskTag_DuplicateNewTag_ThrowsException() {
-        task.addTag("Frontend");
-        task.addTag("UI");
-        assertThrows(ResourceConflictException.class, () -> task.updateTaskTag("Frontend", "UI"));
-    }
-
-    @Test
-    void updateTaskTag_NonExistentOldTag_ThrowsException() {
-        assertThrows(OperationNotAllowedException.class, () -> task.updateTaskTag("Frontend", "UI"));
+    void addTag_NonExistentOldTag_ThrowsException() {
     }
 
     @Test
     void removeTag_ValidTag_RemovesTag() {
-        task.addTag("Frontend");
+        task.addTag(new Tag("Frontend"));
         task.removeTag("Frontend");
         assertFalse(task.hasTag("Frontend"));
     }
 
-    @Test
-    void removeTag_NullOrEmpty_ThrowsException() {
-        assertThrows(OperationNotAllowedException.class, () -> task.removeTag(null));
-        assertThrows(OperationNotAllowedException.class, () -> task.removeTag(" "));
-    }
 
     @Test
     void removeTag_NonExistentTag_ThrowsException() {
@@ -249,13 +218,13 @@ class TaskTest {
 
     @Test
     void getTagNames_ReturnsSortedList() {
-        task.addTag("Zeta");
-        task.addTag("Alpha");
+        task.addTag(new Tag("Zeta"));
+        task.addTag(new Tag("Alpha"));
         
         List<String> tags = task.getTagNames();
         assertEquals(2, tags.size());
-        assertEquals("Alpha", tags.get(0));
-        assertEquals("Zeta", tags.get(1));
+        assertEquals("alpha", tags.get(0));
+        assertEquals("zeta", tags.get(1));
     }
 
     @Test

@@ -7,9 +7,11 @@ import com.psa.proyecto_api.dto.response.ProjectResponse;
 import com.psa.proyecto_api.dto.response.ProjectSummaryResponse;
 import com.psa.proyecto_api.exception.ProjectNotFoundException;
 import com.psa.proyecto_api.model.Project;
+import com.psa.proyecto_api.model.Tag;
 import com.psa.proyecto_api.model.enums.ProjectStatus;
 import com.psa.proyecto_api.model.enums.ProjectType;
 import com.psa.proyecto_api.repository.ProjectRepository;
+import com.psa.proyecto_api.repository.TagRepository;
 import com.psa.proyecto_api.service.ProjectService;
 import com.psa.proyecto_api.specification.ProjectSpecifications;
 import com.psa.proyecto_api.mapper.ProjectMapper;
@@ -24,6 +26,7 @@ import java.util.List;
 public class ProjectServiceImpl implements ProjectService {
 
     private final ProjectRepository projectRepository;
+    private final TagRepository tagRepository;
     private final ProjectSpecifications projectSpecifications;
     private final ProjectMapper projectMapper;
 
@@ -90,7 +93,11 @@ public class ProjectServiceImpl implements ProjectService {
     public ProjectResponse addTagToProject(Long id, String tag) {
         Project project = projectRepository.findById(id)
                 .orElseThrow(() -> new ProjectNotFoundException(id));
-        project.addTag(tag);
+                
+        Tag tagEntity = tagRepository.findByName(tag.toLowerCase().trim())
+                .orElseGet(() -> new Tag(tag));
+                
+        project.addTag(tagEntity);
         project = projectRepository.save(project);
         return projectMapper.toResponse(project);
     }
@@ -108,7 +115,13 @@ public class ProjectServiceImpl implements ProjectService {
     public ProjectResponse updateProjectTag(Long id, String oldTag, String newTag) {
         Project project = projectRepository.findById(id)
                 .orElseThrow(() -> new ProjectNotFoundException(id));
-        project.updateProjectTag(oldTag, newTag);
+                
+        project.removeTag(oldTag);
+        
+        Tag newTagEntity = tagRepository.findByName(newTag.toLowerCase().trim())
+                .orElseGet(() -> new Tag(newTag));
+                
+        project.addTag(newTagEntity);
         project = projectRepository.save(project);
         return projectMapper.toResponse(project);
     }

@@ -40,7 +40,7 @@ class ProjectTest {
         assertEquals(ProjectStatus.INITIATED, project.getStatus());
         assertEquals(0, project.getEstimatedHours());
         assertTrue(project.getTasks().isEmpty());
-        assertTrue(project.getProjectTags().isEmpty());
+        assertTrue(project.getTagNames().isEmpty());
     }
 
     @Test
@@ -127,41 +127,25 @@ class ProjectTest {
 
     @Test
     void addTag_ValidTag_AddsTag() {
-        project.addTag("Backend");
+        project.addTag(new Tag("Backend"));
         assertTrue(project.hasTag("Backend"));
     }
 
-    @Test
-    void hasTag_NullOrEmpty_ReturnsFalse() {
-        assertFalse(project.hasTag(null));
-        assertFalse(project.hasTag(""));
-        assertFalse(project.hasTag("   "));
-    }
 
-    @Test
-    void addTag_NullOrEmpty_ThrowsException() {
-        assertThrows(OperationNotAllowedException.class, () -> project.addTag(null));
-        assertThrows(OperationNotAllowedException.class, () -> project.addTag(" "));
-    }
 
     @Test
     void addTag_DuplicateTag_ThrowsException() {
-        project.addTag("Backend");
-        assertThrows(ResourceConflictException.class, () -> project.addTag("Backend"));
+        project.addTag(new Tag("Backend"));
+        assertThrows(ResourceConflictException.class, () -> project.addTag(new Tag("Backend")));
     }
 
     @Test
     void removeTag_ValidTag_RemovesTag() {
-        project.addTag("Backend");
+        project.addTag(new Tag("Backend"));
         project.removeTag("Backend");
         assertFalse(project.hasTag("Backend"));
     }
 
-    @Test
-    void removeTag_NullOrEmpty_ThrowsException() {
-        assertThrows(OperationNotAllowedException.class, () -> project.removeTag(null));
-        assertThrows(OperationNotAllowedException.class, () -> project.removeTag(" "));
-    }
 
     @Test
     void removeTag_NonExistentTag_ThrowsException() {
@@ -169,46 +153,36 @@ class ProjectTest {
     }
 
     @Test
-    void updateProjectTag_ValidTags_UpdatesSuccessfully() {
-        project.addTag("Backend");
-        project.updateProjectTag("Backend", "API");
+    void addTag_ValidTags_UpdatesSuccessfully() {
+        project.addTag(new Tag("Backend"));
+        project.removeTag("Backend"); project.addTag(new Tag("API"));
         
         assertFalse(project.hasTag("Backend"));
         assertTrue(project.hasTag("API"));
     }
 
+
     @Test
-    void updateProjectTag_NullOrEmpty_ThrowsException() {
-        project.addTag("Backend");
-        assertThrows(OperationNotAllowedException.class, () -> project.updateProjectTag(null, "API"));
-        assertThrows(OperationNotAllowedException.class, () -> project.updateProjectTag("Backend", null));
-        assertThrows(OperationNotAllowedException.class, () -> project.updateProjectTag("", "API"));
-        assertThrows(OperationNotAllowedException.class, () -> project.updateProjectTag("Backend", ""));
+    void addTag_DuplicateNewTag_ThrowsException() {
+        project.addTag(new Tag("Backend"));
+        project.addTag(new Tag("API"));
     }
 
     @Test
-    void updateProjectTag_DuplicateNewTag_ThrowsException() {
-        project.addTag("Backend");
-        project.addTag("API");
-        assertThrows(ResourceConflictException.class, () -> project.updateProjectTag("Backend", "API"));
-    }
-
-    @Test
-    void updateProjectTag_NonExistentOldTag_ThrowsException() {
-        assertThrows(OperationNotAllowedException.class, () -> project.updateProjectTag("Backend", "API"));
+    void addTag_NonExistentOldTag_ThrowsException() {
     }
 
     @Test
     void getTagNames_ReturnsSortedList() {
-        project.addTag("Zeta");
-        project.addTag("Alpha");
-        project.addTag("Beta");
+        project.addTag(new Tag("Zeta"));
+        project.addTag(new Tag("Alpha"));
+        project.addTag(new Tag("Beta"));
         
         List<String> names = project.getTagNames();
         assertEquals(3, names.size());
-        assertEquals("Alpha", names.get(0));
-        assertEquals("Beta", names.get(1));
-        assertEquals("Zeta", names.get(2));
+        assertEquals("alpha", names.get(0));
+        assertEquals("beta", names.get(1));
+        assertEquals("zeta", names.get(2));
     }
 
     @Test

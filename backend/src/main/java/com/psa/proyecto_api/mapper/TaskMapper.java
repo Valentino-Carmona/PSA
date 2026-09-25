@@ -7,10 +7,16 @@ import com.psa.proyecto_api.dto.request.UpdateTaskRequest;
 import com.psa.proyecto_api.dto.response.TaskResponse;
 import com.psa.proyecto_api.dto.response.TaskSummaryResponse;
 import com.psa.proyecto_api.model.Project;
+import com.psa.proyecto_api.model.Tag;
 import com.psa.proyecto_api.model.Task;
+import com.psa.proyecto_api.repository.TagRepository;
+import lombok.RequiredArgsConstructor;
 
 @Component 
+@RequiredArgsConstructor
 public class TaskMapper {
+    
+    private final TagRepository tagRepository;
     
     public Task toEntity(CreateTaskRequest req, Project project) {
         Task task = new Task(
@@ -24,7 +30,11 @@ public class TaskMapper {
         }
         
         if (req.getTagNames() != null && !req.getTagNames().isEmpty()) {
-            req.getTagNames().forEach(task::addTag);
+            req.getTagNames().forEach(tagName -> {
+                Tag tag = tagRepository.findByName(tagName.toLowerCase().trim())
+                        .orElseGet(() -> new Tag(tagName));
+                task.addTag(tag);
+            });
         }
 
         if (req.getTicketId() != null) {

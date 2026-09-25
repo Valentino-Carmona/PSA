@@ -56,21 +56,21 @@ public interface ProjectRepository extends JpaRepository<Project, Long>, JpaSpec
     List<Project> findByNameContainingIgnoreCase(@Param("name") String name);
 
     // Consultas por etiquetas
-    @Query("SELECT p FROM Project p JOIN p.projectTags tag WHERE tag.tagName = :tagName")
+    @Query("SELECT p FROM Project p JOIN p.tags tag WHERE tag.name = :tagName")
     List<Project> findByTagName(@Param("tagName") String tagName);
     
-    @Query("SELECT p FROM Project p JOIN p.projectTags tag WHERE tag.tagName IN :tagNames")
+    @Query("SELECT p FROM Project p JOIN p.tags tag WHERE tag.name IN :tagNames")
     List<Project> findByTagNames(@Param("tagNames") List<String> tagNames);
 
     /**
      * Consulta para filtrar proyectos por nombre, tipo, estado y etiqueta.
      */
     @Query("SELECT DISTINCT p FROM Project p " +
-           "LEFT JOIN p.projectTags tag " + // Use LEFT JOIN to ensure projects without tags are still considered if tag is not filtered
+           "LEFT JOIN p.tags tag " + // Use LEFT JOIN to ensure projects without tags are still considered if tag is not filtered
            "WHERE (:nombre IS NULL OR :nombre = '' OR LOWER(p.name) LIKE LOWER(CONCAT('%', :nombre, '%'))) " +
            "AND (:tipo IS NULL OR p.type = :tipo) " +
            "AND (:estado IS NULL OR p.status = :estado) " +
-           "AND (:tag IS NULL OR :tag = '' OR LOWER(tag.tagName) LIKE LOWER(CONCAT('%', :tag, '%')) OR (SIZE(p.projectTags) = 0 AND :tag IS NOT NULL AND :tag = ''))")
+           "AND (:tag IS NULL OR :tag = '' OR LOWER(tag.name) LIKE LOWER(CONCAT('%', :tag, '%')) OR (SIZE(p.tags) = 0 AND :tag IS NOT NULL AND :tag = ''))")
     List<Project> findByProgressiveFilters(
             @Param("nombre") String nombre,
             @Param("tipo") ProjectType tipo,

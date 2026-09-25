@@ -8,10 +8,12 @@ import com.psa.proyecto_api.dto.response.ProjectSummaryResponse;
 import com.psa.proyecto_api.exception.ProjectNotFoundException;
 import com.psa.proyecto_api.mapper.ProjectMapper;
 import com.psa.proyecto_api.model.Project;
+import com.psa.proyecto_api.model.Tag;
 import com.psa.proyecto_api.model.enums.ProjectBillingType;
 import com.psa.proyecto_api.model.enums.ProjectStatus;
 import com.psa.proyecto_api.model.enums.ProjectType;
 import com.psa.proyecto_api.repository.ProjectRepository;
+import com.psa.proyecto_api.repository.TagRepository;
 import com.psa.proyecto_api.service.impl.ProjectServiceImpl;
 import com.psa.proyecto_api.specification.ProjectSpecifications;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,7 +35,11 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class ProjectServiceImplTest {
 
-    @Mock private ProjectRepository projectRepository;
+    @Mock
+    private TagRepository tagRepository;
+
+    @Mock
+    private ProjectRepository projectRepository;
     @Mock private ProjectSpecifications projectSpecifications;
     @Mock private ProjectMapper projectMapper;
 
@@ -159,6 +165,7 @@ class ProjectServiceImplTest {
         when(projectRepository.save(project)).thenReturn(project);
         when(projectMapper.toResponse(project)).thenReturn(projectResponse);
 
+        when(tagRepository.findByName(anyString())).thenReturn(java.util.Optional.empty());
         ProjectResponse result = projectService.addTagToProject(1L, "backend");
 
         assertNotNull(result);
@@ -174,7 +181,7 @@ class ProjectServiceImplTest {
 
     @Test
     void removeTagFromProject_WhenExists_ReturnsUpdatedProject() {
-        project.addTag("backend");
+        project.addTag(new Tag("backend"));
         when(projectRepository.findById(1L)).thenReturn(Optional.of(project));
         when(projectRepository.save(project)).thenReturn(project);
         when(projectMapper.toResponse(project)).thenReturn(projectResponse);
@@ -193,11 +200,12 @@ class ProjectServiceImplTest {
 
     @Test
     void updateProjectTag_WhenExists_ReturnsUpdatedProject() {
-        project.addTag("oldTag");
+        project.addTag(new Tag("oldTag"));
         when(projectRepository.findById(1L)).thenReturn(Optional.of(project));
         when(projectRepository.save(project)).thenReturn(project);
         when(projectMapper.toResponse(project)).thenReturn(projectResponse);
 
+        when(tagRepository.findByName(anyString())).thenReturn(java.util.Optional.empty());
         ProjectResponse result = projectService.updateProjectTag(1L, "oldTag", "newTag");
 
         assertNotNull(result);
@@ -212,7 +220,7 @@ class ProjectServiceImplTest {
 
     @Test
     void getProjectTags_WhenExists_ReturnsTags() {
-        project.addTag("backend");
+        project.addTag(new Tag("backend"));
         when(projectRepository.findById(1L)).thenReturn(Optional.of(project));
 
         List<String> tags = projectService.getProjectTags(1L);

@@ -25,14 +25,14 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     List<Task> findByAssignedResourceIdAndStatus(String assignedResourceId, TaskStatus status);
         
     // Consultas por etiquetas
-    @Query("SELECT t FROM Task t JOIN t.taskTags tag WHERE tag.tagName = :tagName")
+    @Query("SELECT t FROM Task t JOIN t.tags tag WHERE tag.name = :tagName")
     List<Task> findByTagName(@Param("tagName") String tagName);
     
-    @Query("SELECT t FROM Task t JOIN t.taskTags tag WHERE tag.tagName IN :tagNames")
+    @Query("SELECT t FROM Task t JOIN t.tags tag WHERE tag.name IN :tagNames")
     List<Task> findByTagNames(@Param("tagNames") List<String> tagNames);
     
     // Consulta para tareas de un proyecto con etiqueta específica
-    @Query("SELECT t FROM Task t JOIN t.taskTags tag WHERE t.project.id = :projectId AND tag.tagName = :tagName")
+    @Query("SELECT t FROM Task t JOIN t.tags tag WHERE t.project.id = :projectId AND tag.name = :tagName")
     List<Task> findByProjectIdAndTagName(@Param("projectId") Long projectId, @Param("tagName") String tagName);
     
     // Estadísticas útiles
@@ -51,7 +51,7 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
        "AND (:status IS NULL OR t.status = :status) " +
        "AND (:taskName IS NULL OR :taskName = '' OR LOWER(t.name) LIKE LOWER(CONCAT('%', :taskName, '%'))) " +
        "AND (:tagName IS NULL OR :tagName = '' OR " +
-       "     EXISTS (SELECT 1 FROM t.taskTags tt WHERE LOWER(tt.tagName) = LOWER(:tagName))) " +
+       "     EXISTS (SELECT 1 FROM t.tags tt WHERE LOWER(tt.name) = LOWER(:tagName))) " +
        "AND (:ticketId IS NULL OR t.ticketId = :ticketId)")
     List<Task> findByProgressiveFilters(
             @Param("projectId") Long projectId,

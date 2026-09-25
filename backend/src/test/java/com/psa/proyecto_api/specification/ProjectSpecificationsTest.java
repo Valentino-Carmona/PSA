@@ -2,7 +2,7 @@ package com.psa.proyecto_api.specification;
 
 import com.psa.proyecto_api.dto.request.ProjectFilterRequest;
 import com.psa.proyecto_api.model.Project;
-import com.psa.proyecto_api.model.ProjectTag;
+import com.psa.proyecto_api.model.Tag;
 import com.psa.proyecto_api.model.enums.ProjectStatus;
 import com.psa.proyecto_api.model.enums.ProjectType;
 import com.psa.proyecto_api.repository.ProjectRepository;
@@ -50,10 +50,9 @@ class ProjectSpecificationsTest {
         project1.setBillingType(com.psa.proyecto_api.model.enums.ProjectBillingType.FIXED_PRICE);
         project1.setStartDate(LocalDate.now());
         
-        ProjectTag tag1 = new ProjectTag();
-        tag1.setTagName("backend");
-        tag1.setProject(project1);
-        project1.getProjectTags().add(tag1);
+        Tag tag1 = new Tag("backend");
+        
+        project1.getTags().add(tag1);
         
         project2 = new Project();
         project2.setName("Project Beta");
@@ -62,10 +61,9 @@ class ProjectSpecificationsTest {
         project2.setBillingType(com.psa.proyecto_api.model.enums.ProjectBillingType.TIME_AND_MATERIAL);
         project2.setStartDate(LocalDate.now());
         
-        ProjectTag tag2 = new ProjectTag();
-        tag2.setTagName("frontend");
-        tag2.setProject(project2);
-        project2.getProjectTags().add(tag2);
+        Tag tag2 = new Tag("frontend");
+        
+        project2.getTags().add(tag2);
         
         project3 = new Project();
         project3.setName("Project Gamma");

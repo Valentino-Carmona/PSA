@@ -29,7 +29,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString(exclude = {"project", "taskTags"})
+@ToString(exclude = {"project", "tags"})
 public class Task {
     
     @Id
@@ -66,16 +66,20 @@ public class Task {
     @JoinColumn(name = "project_id", nullable = false)
     private Project project;
     
-    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "task_tags",
+        joinColumns = @JoinColumn(name = "task_id"),
+        inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
     @Builder.Default
-    private List<TaskTag> taskTags = new ArrayList<>();
+    private List<Tag> tags = new ArrayList<>();
     
     // Constructor
     public Task(String name, Project project, Integer estimatedHours) {
         this.name = name;
         this.project = project;
         this.estimatedHours = estimatedHours;
-        this.taskTags = new ArrayList<>();
+        this.tags = new ArrayList<>();
         this.status = TaskStatus.TO_DO;
 
         // Establecer la relacion bidireccional con el proyecto
@@ -112,28 +116,22 @@ public class Task {
     // Métodos de gestión de tags
     
     /**
-     * Agrega un tag a la tarea evitando duplicados.
+     * Agrega un tag a la tarea evitando duplicados. Recibe directamente la entidad Tag.
      */
-    public void addTag(String tagName) {
-        if (tagName == null || tagName.trim().isEmpty()) {
-            throw new OperationNotAllowedException("El nombre del tag no puede ser nulo o vacío");
+    public void addTag(Tag tag) {
+        if (tag == null) {
+            throw new OperationNotAllowedException("El tag no puede ser nulo");
         }
-        String normalizedTagName = tagName.trim();
         
         // Verificar si el tag ya existe
-        boolean tagExists = taskTags.stream()
-            .anyMatch(taskTag -> taskTag.hasTagName(normalizedTagName));
+        boolean tagExists = tags.stream()
+            .anyMatch(t -> t.getName().equalsIgnoreCase(tag.getName()));
             
         if (tagExists) {
-            throw new ResourceConflictException("El tag '" + tagName + "' ya existe en esta tarea");
+            throw new ResourceConflictException("El tag '" + tag.getName() + "' ya existe en esta tarea");
         }
         
-        TaskTag newTag = TaskTag.builder()
-            .tagName(normalizedTagName)
-            .task(this)
-            .build();
-        
-        taskTags.add(newTag);
+        tags.add(tag);
     }
 
     /**
@@ -142,50 +140,17 @@ public class Task {
     public void updateDetails(String name, Integer estimatedHours, String assignedResourceId, Integer ticketId) {
         if (name != null && !name.trim().isEmpty()) {
             this.name = name;
-        
         }
         if (estimatedHours != null && estimatedHours > 0) {
             this.estimatedHours = estimatedHours;
             this.project.updateProjectStatusAndHours();
-
         }
         if (assignedResourceId != null && !assignedResourceId.trim().isEmpty()) {
             this.assignedResourceId = assignedResourceId;
-
         } 
         if (ticketId != null) {
             this.ticketId = ticketId;
         }
-    }
-
-    /**
-     * Actualiza un tag de la tarea.
-     */
-    public void updateTaskTag(String oldTag, String newTag) {
-        if (oldTag == null || oldTag.isEmpty()) {
-            throw new OperationNotAllowedException("El nombre del tag actual no puede ser nulo o vacío");
-        }
-        
-        if (newTag == null || newTag.isEmpty()) {
-            throw new OperationNotAllowedException("El nombre del nuevo tag no puede ser nulo o vacío");
-        }
-
-        // Verificar si el nuevo tag ya existe (evitar duplicados)
-        boolean newTagExists = taskTags.stream()
-            .anyMatch(taskTag -> taskTag.hasTagName(newTag));
-            
-        if (newTagExists) {
-            throw new ResourceConflictException("El tag '" + newTag + "' ya existe en esta tarea");
-        }
-
-        for (TaskTag taskTag : this.taskTags) {
-            if (taskTag.hasTagName(oldTag)) {
-                taskTag.updateTagName(newTag);
-                return;
-            }
-        }
-        
-        throw new OperationNotAllowedException("El tag '" + oldTag + "' no existe en esta tarea");
     }
 
     /**
@@ -197,7 +162,7 @@ public class Task {
         }
         String normalizedTagName = tagName.trim();
         
-        boolean removed = taskTags.removeIf(taskTag -> taskTag.hasTagName(normalizedTagName));
+        boolean removed = tags.removeIf(tag -> tag.getName().equalsIgnoreCase(normalizedTagName));
         
         if (!removed) {
             throw new OperationNotAllowedException("El tag '" + tagName + "' no existe en esta tarea");
@@ -275,16 +240,16 @@ public class Task {
         }
         
         String normalizedTagName = tagName.trim();
-        return taskTags.stream()
-            .anyMatch(taskTag -> taskTag.hasTagName(normalizedTagName));
+        return tags.stream()
+            .anyMatch(tag -> tag.getName().equalsIgnoreCase(normalizedTagName));
     }
     
     /**
      * Obtiene todos los nombres de tags de la tarea.
      */
     public List<String> getTagNames() {
-        return taskTags.stream()
-            .map(TaskTag::getTagName)
+        return tags.stream()
+            .map(Tag::getName)
             .sorted()
             .toList();
     }
