@@ -9,7 +9,7 @@ MAVEN := ./mvnw
 DOTENV := .env
 
 DOCKER_COMPOSE := docker compose -f ../docker-compose.yml
-FLYWAY_ARGS := -Dflyway.url=jdbc:postgresql://$$(PGHOST)/$$(PGDATABASE)?sslmode=require -Dflyway.user=$$(PGUSER) -Dflyway.password=$$(PGPASSWORD)
+FLYWAY_ARGS := -Dflyway.url=jdbc:postgresql://$(PGHOST)/$(PGDATABASE)?sslmode=require -Dflyway.user=$(PGUSER) -Dflyway.password=$(PGPASSWORD) -Dflyway.cleanDisabled=false
 
 .PHONY: help dev clean install test check-env flyway-clean flyway-repair flyway-migrate flyway-info db-reset setup build up down restart rebuild
 

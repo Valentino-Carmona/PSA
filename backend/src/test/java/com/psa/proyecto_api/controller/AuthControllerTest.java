@@ -17,25 +17,19 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(controllers = AuthController.class, excludeAutoConfiguration = {SecurityAutoConfiguration.class})
-@AutoConfigureMockMvc(addFilters = false)
-class AuthControllerTest {
-
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
+class AuthControllerTest extends BaseWebTest {
 
     @MockitoBean
-    private JwtUtil jwtUtil;
+    private com.psa.proyecto_api.service.AuthService authService;
 
     @Test
     void login_ValidRequest_ReturnsToken() throws Exception {
         LoginRequest request = new LoginRequest();
-        request.setUsername("admin");
+        request.setEmail("admin@psa.com");
         request.setPassword("password123");
         
-        when(jwtUtil.generateToken("admin")).thenReturn("fake-jwt-token");
+        when(authService.login(org.mockito.ArgumentMatchers.any(LoginRequest.class)))
+            .thenReturn(new com.psa.proyecto_api.dto.response.AuthResponse("fake-jwt-token"));
 
         mockMvc.perform(post("/api/v1/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)

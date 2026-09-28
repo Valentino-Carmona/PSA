@@ -130,4 +130,11 @@ class EnumsTest {
         assertFalse(TaskStatus.DONE.canStart());
         assertFalse(TaskStatus.DONE.canComplete());
     }
+
+    @Test
+    void role_ValidValues_Exists() {
+        assertNotNull(Role.valueOf("ROLE_USER"));
+        assertNotNull(Role.valueOf("ROLE_ADMIN"));
+        assertEquals(2, Role.values().length);
+    }
 }

@@ -40,6 +40,25 @@ public class SecurityEdgeCaseIntegrationTest {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @Autowired
+    private com.psa.proyecto_api.repository.UserRepository userRepository;
+    
+    @Autowired
+    private org.springframework.security.crypto.password.PasswordEncoder passwordEncoder;
+
+    @org.junit.jupiter.api.BeforeEach
+    void setUp() {
+        if (userRepository.findByEmail("test@user.com").isEmpty()) {
+            com.psa.proyecto_api.model.User user = new com.psa.proyecto_api.model.User();
+            user.setFirstName("Test");
+            user.setLastName("User");
+            user.setEmail("test@user.com");
+            user.setPassword(passwordEncoder.encode("secret"));
+            user.setRole(com.psa.proyecto_api.model.enums.Role.ROLE_ADMIN);
+            userRepository.save(user);
+        }
+    }
+
     @Test
     void whenInvalidTokenSignature_thenReturns401() throws Exception {
         // Generar un token con otra llave (falsificado)
@@ -58,7 +77,7 @@ public class SecurityEdgeCaseIntegrationTest {
 
     @Test
     void whenXSSPayloadInProjectName_thenReturns400() throws Exception {
-        String token = jwtUtil.generateToken("test-user");
+        String token = jwtUtil.generateToken("test@user.com");
 
         CreateProjectRequest request = new CreateProjectRequest();
         request.setName("<script>alert('xss')</script>");
@@ -76,7 +95,7 @@ public class SecurityEdgeCaseIntegrationTest {
 
     @Test
     void whenInvalidUUIDInLeaderId_thenReturns400() throws Exception {
-        String token = jwtUtil.generateToken("test-user");
+        String token = jwtUtil.generateToken("test@user.com");
 
         CreateProjectRequest request = new CreateProjectRequest();
         request.setName("Proyecto Valido");
@@ -97,7 +116,7 @@ public class SecurityEdgeCaseIntegrationTest {
     @Test
     void whenExceedsRateLimit_thenReturns429() throws Exception {
         // NOTA: Este test asume que el rate limit es 5 (por el @TestPropertySource).
-        String token = jwtUtil.generateToken("test-user");
+        String token = jwtUtil.generateToken("test@user.com");
 
         // Realizamos 5 peticiones exitosas (o al menos no 429)
         for (int i = 0; i < 5; i++) {

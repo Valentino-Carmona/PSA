@@ -17,8 +17,6 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.psa.proyecto_api.security.JwtUtil;
-
 import java.util.List;
 import java.util.Collections;
 
@@ -31,20 +29,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(controllers = TaskController.class, excludeAutoConfiguration = {SecurityAutoConfiguration.class})
-@AutoConfigureMockMvc(addFilters = false)
-class TaskControllerTest {
-
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
+class TaskControllerTest extends BaseWebTest {
 
     @MockitoBean
     private TaskService taskService;
-
-    @MockitoBean
-    private JwtUtil jwtUtil;
 
     private TaskResponse taskResponse;
 

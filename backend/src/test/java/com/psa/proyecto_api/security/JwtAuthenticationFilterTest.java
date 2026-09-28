@@ -25,6 +25,9 @@ class JwtAuthenticationFilterTest {
     private JwtUtil jwtUtil;
 
     @Mock
+    private org.springframework.security.core.userdetails.UserDetailsService userDetailsService;
+
+    @Mock
     private HttpServletRequest request;
 
     @Mock
@@ -45,13 +48,19 @@ class JwtAuthenticationFilterTest {
     void doFilterInternal_ValidToken_SetsAuthentication() throws Exception {
         when(request.getHeader("Authorization")).thenReturn("Bearer valid-token");
         when(jwtUtil.extractUsername("valid-token")).thenReturn("testuser");
+        
+        org.springframework.security.core.userdetails.UserDetails userDetails = mock(org.springframework.security.core.userdetails.UserDetails.class);
+        when(userDetails.getUsername()).thenReturn("testuser");
+        when(userDetails.getAuthorities()).thenReturn(null);
+        when(userDetailsService.loadUserByUsername("testuser")).thenReturn(userDetails);
+        
         when(jwtUtil.validateToken("valid-token", "testuser")).thenReturn(true);
 
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         assertNotNull(auth);
-        assertEquals("testuser", auth.getName());
+        assertEquals("testuser", ((org.springframework.security.core.userdetails.UserDetails) auth.getPrincipal()).getUsername());
         verify(filterChain).doFilter(request, response);
     }
 
@@ -79,6 +88,11 @@ class JwtAuthenticationFilterTest {
     void doFilterInternal_InvalidToken_DoesNotSetAuthentication() throws Exception {
         when(request.getHeader("Authorization")).thenReturn("Bearer invalid-token");
         when(jwtUtil.extractUsername("invalid-token")).thenReturn("testuser");
+        
+        org.springframework.security.core.userdetails.UserDetails userDetails = mock(org.springframework.security.core.userdetails.UserDetails.class);
+        when(userDetails.getUsername()).thenReturn("testuser");
+        when(userDetailsService.loadUserByUsername("testuser")).thenReturn(userDetails);
+        
         when(jwtUtil.validateToken("invalid-token", "testuser")).thenReturn(false);
 
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);

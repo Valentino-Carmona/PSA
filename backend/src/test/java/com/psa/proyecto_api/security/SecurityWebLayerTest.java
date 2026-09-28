@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest({ProjectController.class, AuthController.class})
-@Import({SecurityConfig.class, JwtAuthenticationFilter.class, JwtUtil.class, JwtAuthenticationEntryPoint.class, RateLimitingFilter.class})
+@Import({SecurityConfig.class, com.psa.proyecto_api.config.ApplicationConfig.class, JwtAuthenticationFilter.class, JwtUtil.class, JwtAuthenticationEntryPoint.class, RateLimitingFilter.class})
 public class SecurityWebLayerTest {
 
     @Autowired
@@ -29,6 +29,12 @@ public class SecurityWebLayerTest {
     @MockitoBean
     private ExternalApiService externalApiService;
 
+    @MockitoBean
+    private com.psa.proyecto_api.repository.UserRepository userRepository;
+
+    @MockitoBean
+    private com.psa.proyecto_api.service.AuthService authService;
+
     @Test
     void whenAccessProtectedEndpointWithoutToken_thenReturns401() throws Exception {
         mockMvc.perform(get("/api/v1/proyectos"))
@@ -37,7 +43,7 @@ public class SecurityWebLayerTest {
 
     @Test
     void whenLoginWithValidCredentials_thenReturns200AndToken() throws Exception {
-        String loginPayload = "{\"username\": \"admin\", \"password\": \"secret\"}";
+        String loginPayload = "{\"email\": \"admin@psa.com\", \"password\": \"secret\"}";
 
         mockMvc.perform(post("/api/v1/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)

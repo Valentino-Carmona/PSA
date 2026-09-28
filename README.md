@@ -117,9 +117,9 @@ El código se encuentra protegido por una estricta barrera de cobertura que vali
 ### Pruebas de Mutación (PIT)
 Para garantizar que el >90% de cobertura no sea superficial, el pipeline implementa **Mutation Testing** (Pitest) aislado en la capa core (`model`, `mapper`, `service`). En cada compilación, PIT inyecta deliberadamente cientos de bugs lógicos (mutantes) en el código fuente para evaluar la fuerza de las aserciones de los tests.
 
-- **Mutantes Generados:** `320`
-- **Mutantes Asesinados (Killed):** `268 (84%)`
-- **Fuerza Real de los Tests (Test Strength):** `91%`
+- **Mutantes Generados:** `290`
+- **Mutantes Asesinados (Killed):** `247 (85%)`
+- **Fuerza Real de los Tests (Test Strength):** `92%`
 
 Estos números garantizan empíricamente que la arquitectura es robusta, resiliente y que los tests capturan efectivamente fallas en la lógica de negocio.
 
