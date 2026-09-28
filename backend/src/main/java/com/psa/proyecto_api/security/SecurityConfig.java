@@ -24,6 +24,7 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final JwtAuthenticationEntryPoint jwtAuthEntryPoint;
     private final RateLimitingFilter rateLimitingFilter;
+    private final org.springframework.security.authentication.AuthenticationProvider authenticationProvider;
 
     @Value("${cors.allowed-origins:http://localhost:5173}")
     private String corsAllowedOrigins;
@@ -42,6 +43,7 @@ public class SecurityConfig {
                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**", "/webjars/**").permitAll()
                 .anyRequest().authenticated()
             )
+            .authenticationProvider(authenticationProvider)
             .exceptionHandling(exception -> exception
                 .authenticationEntryPoint(jwtAuthEntryPoint)
             )
